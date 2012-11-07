@@ -654,10 +654,10 @@ class Hierarchy extends Database {
         ->mpttGetNodeByName ($objNodePName, $this->objRightField));
     }
 
- 	/**
- 	 * Moves sub-tree as next-sibling;
- 	 *
- 	 * @author Catalin Alexandru Zamfir <catalin.zamfir@raphpframework.ro>
+   /**
+    * Moves sub-tree as next-sibling;
+    *
+    * @author Catalin Alexandru Zamfir <catalin.zamfir@raphpframework.ro>
      * @copyright Under the terms of the GNU General Public License v3
      * @version $Id: Hierarchy.php 1 2012-10-26 08:27:37Z root $
      */

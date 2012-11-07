@@ -314,7 +314,7 @@ class Database extends Template {
         $tableFieldArray = new A;
 
         // Foreach
-    	foreach (self::$objConnection
+      foreach (self::$objConnection
         ->query (_S ('SELECT * FROM %pId LIMIT 0')
         ->doToken ('%pId', $objQueryTable))
         ->fetch_fields () as $objK => $objV) {

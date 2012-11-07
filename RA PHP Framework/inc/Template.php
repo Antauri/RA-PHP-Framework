@@ -145,32 +145,32 @@ class Template extends M {
 
         // Check
         if ($_GET->offsetExists (_T ('Method'))) {
-        	// Switch
-        	switch ($_GET
-			->offsetGet (_T ('Method'))) {
-				case 'GetUpdates':
-					// Stop
-					self::disableGzip ();
-					break;
+          // Switch
+          switch ($_GET
+      ->offsetGet (_T ('Method'))) {
+        case 'GetUpdates':
+          // Stop
+          self::disableGzip ();
+          break;
 
-        		case 'GetAsBinary':
-        			// Check
-        			if ($_GET->offsetExists (_T ('What'))) {
-        				// Switch
-        				switch ($_GET
-						->offsetGet (_T ('What'))) {
-        					// Raw
-        					case _T ('Raw'):
-							case _T ('Image'):
-							case _T ('Media'):
-        						// Stop
-        						self::disableGzip ();
-        						break;
-        				}
-        			}
-        			// BK;
-        			break;
-        	}
+            case 'GetAsBinary':
+              // Check
+              if ($_GET->offsetExists (_T ('What'))) {
+                // Switch
+                switch ($_GET
+            ->offsetGet (_T ('What'))) {
+                  // Raw
+                  case _T ('Raw'):
+              case _T ('Image'):
+              case _T ('Media'):
+                    // Stop
+                    self::disableGzip ();
+                    break;
+                }
+              }
+              // BK;
+              break;
+          }
         }
 
         // Headers & registrations
@@ -802,8 +802,8 @@ class Template extends M {
      * @version $Id: Template.php 1 2012-10-26 08:27:37Z root $
      */
     public static function enableGzip () {
-    	// Set
-    	self::$objGzipDisabled = false;
+      // Set
+      self::$objGzipDisabled = false;
     }
 
     /**
@@ -814,8 +814,8 @@ class Template extends M {
      * @version $Id: Template.php 1 2012-10-26 08:27:37Z root $
      */
     public static function disableGzip () {
-    	// Set
-    	self::$objGzipDisabled = true;
+      // Set
+      self::$objGzipDisabled = true;
     }
 
     /**
@@ -826,8 +826,8 @@ class Template extends M {
      * @version $Id: Template.php 1 2012-10-26 08:27:37Z root $
      */
     public static function isGzipDisabled () {
-    	// Return
-    	return self::$objGzipDisabled;
+      // Return
+      return self::$objGzipDisabled;
     }
 
     /**
@@ -928,27 +928,27 @@ class Template extends M {
      * @version $Id: Template.php 1 2012-10-26 08:27:37Z root $
      */
     protected static final function outputCryptedJson (A $objArrayToJSON) {
-    	// Discard stream
-    	Output::discardStream (new B (TRUE));
+      // Discard stream
+      Output::discardStream (new B (TRUE));
 
-    	// Switch
-    	self::switchHTML ();
+      // Switch
+      self::switchHTML ();
 
-    	// Copy
-    	$objArrayToJSONCopy =
-    	$objArrayToJSON
-    	->makeCopyObject ()
-    	->toArray ();
+      // Copy
+      $objArrayToJSONCopy =
+      $objArrayToJSON
+      ->makeCopyObject ()
+      ->toArray ();
 
-    	// Set
-    	self::convertDTsToJSON ($objArrayToJSONCopy);
+      // Set
+      self::convertDTsToJSON ($objArrayToJSONCopy);
 
-    	// JSONify
-    	echo Architecture::doCrypt (new
-		S (json_encode ($objArrayToJSONCopy)));
+      // JSONify
+      echo Architecture::doCrypt (new
+    S (json_encode ($objArrayToJSONCopy)));
 
-    	// Die
-    	Output::stopStream ();
+      // Die
+      Output::stopStream ();
     }
 
     /**
@@ -1260,7 +1260,7 @@ class Template extends M {
 
                 // Check
                 if (OB_GZIP == TRUE && OB_GZIP_LEVEL > 0 && OB_GZIP_LEVEL <= 9 &&
-				self::isGzipDisabled () == false) {
+        self::isGzipDisabled () == false) {
                     // Switch
                     switch ($objEncodingType) {
                         // Deflate

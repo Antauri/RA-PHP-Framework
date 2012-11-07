@@ -360,17 +360,17 @@ abstract class Commons extends Mods {
         ->toBoolean () == FALSE) {
             // Go
             $this->doQuery (new S ('CREATE TABLE
-    	    IF NOT EXISTS `_T_system_notifications`
-    	    (`id` char(36) NOT NULL,
-    	    `source` varchar(50) NOT NULL,
-    	    `msg` longtext NOT NULL,
-    	    `type` int(4) NOT NULL,
-    	    `published` bigint(20) unsigned NOT NULL,
-    	    `viewed` enum("Y", "N") NOT NULL default "N",
-    	    KEY `id` (`id`),
-    	    KEY `source` (`source`(50)))
-    	    ENGINE=InnoDB
-    	    DEFAULT CHARSET=utf8;'));
+          IF NOT EXISTS `_T_system_notifications`
+          (`id` char(36) NOT NULL,
+          `source` varchar(50) NOT NULL,
+          `msg` longtext NOT NULL,
+          `type` int(4) NOT NULL,
+          `published` bigint(20) unsigned NOT NULL,
+          `viewed` enum("Y", "N") NOT NULL default "N",
+          KEY `id` (`id`),
+          KEY `source` (`source`(50)))
+          ENGINE=InnoDB
+          DEFAULT CHARSET=utf8;'));
 
             // Hard-code of setup
             $this->setNotification (_T ('Setup'), _T ('It seems that everything went Ok and the database, directories and any other
@@ -780,22 +780,22 @@ abstract class Commons extends Mods {
                 ->offsetGet (_T ('Kind'))) {
                     // REST-ing
                     case _T ('Json'):
-                    	// Check
-                    	if ($_GET->offsetExists (_T ('As'))) {
-                    		// Check
-                    		switch ($_GET->offsetGet (_T ('As'))) {
-                    			case 'Crypted':
-                    				// Set
-                    				self::outputCryptedJson ($this
-									->$objMethod ());
-                    				break;
-                    		}
-                    	} else {
-                    		// Check
-                    		self::outputJson ($this
-							->$objMethod ());
-                    	}
-                    	// BK;
+                      // Check
+                      if ($_GET->offsetExists (_T ('As'))) {
+                        // Check
+                        switch ($_GET->offsetGet (_T ('As'))) {
+                          case 'Crypted':
+                            // Set
+                            self::outputCryptedJson ($this
+                  ->$objMethod ());
+                            break;
+                        }
+                      } else {
+                        // Check
+                        self::outputJson ($this
+              ->$objMethod ());
+                      }
+                      // BK;
                         break;
 
                     // Serialized
@@ -1273,7 +1273,7 @@ abstract class Commons extends Mods {
         ->offsetGet (0)->offsetGet ($objFieldToGet);
     }
 
-	/**
+  /**
      * Returns next item by current URL;
      *
      * @author Catalin Alexandru Zamfir <catalin.zamfir@raphpframework.ro>
@@ -1573,11 +1573,11 @@ abstract class Commons extends Mods {
      * @version $Id: Commons.php 23 2012-10-26 21:06:06Z root $
      */
     public function getAttachmentsByItemId (S $objItemId, S $objSQLCondition = NULL) {
-    	// Return
-    	return $this->_Q (_QS ('doSELECT')
-		->doToken ('%what', new S ('*'))->doToken ('%table', static::$objAttachment)
-		->doToken ('%condition', new S ('WHERE %objAttachmentAId = "%Id" %condition'))
-		->doToken ('%Id', $objItemId)->doToken ('%condition', $objSQLCondition));
+      // Return
+      return $this->_Q (_QS ('doSELECT')
+    ->doToken ('%what', new S ('*'))->doToken ('%table', static::$objAttachment)
+    ->doToken ('%condition', new S ('WHERE %objAttachmentAId = "%Id" %condition'))
+    ->doToken ('%Id', $objItemId)->doToken ('%condition', $objSQLCondition));
     }
 
     /**
@@ -2422,42 +2422,42 @@ abstract class Commons extends Mods {
             // Switch
             switch ($_GET
             ->offsetGet (_T ('What'))) {
-            	// Raw
-            	case _T ('Raw'):
-            		// Check
-            		if ($_GET->offsetExists (_T ('Output'))) {
-            			// Determine
-            			$objFp =  new StoragePath (Architecture
-						::pathTo (UPLOAD_DIR, $this->getObjectAncestry ()->toLower (),
-						_I ((int) (string) $this->getAttachmentById ($_GET[_T ('Output')],
-						static::$objAttachmentPublished))->toDateString ('Y/m/d'),
-						$this->getAttachmentById ($_GET[_T ('Output')],
-						static::$objAttachmentURL)));
+              // Raw
+              case _T ('Raw'):
+                // Check
+                if ($_GET->offsetExists (_T ('Output'))) {
+                  // Determine
+                  $objFp =  new StoragePath (Architecture
+            ::pathTo (UPLOAD_DIR, $this->getObjectAncestry ()->toLower (),
+            _I ((int) (string) $this->getAttachmentById ($_GET[_T ('Output')],
+            static::$objAttachmentPublished))->toDateString ('Y/m/d'),
+            $this->getAttachmentById ($_GET[_T ('Output')],
+            static::$objAttachmentURL)));
 
-            			// Header
-            			Header::setKey (new S ($objFp->getMimeType ()),
-						new S  ('Content-Type'));
+                  // Header
+                  Header::setKey (new S ($objFp->getMimeType ()),
+            new S  ('Content-Type'));
 
-            			// Content-Length
-            			Header::setKey (_S ('%fId')
-						->doToken ('%fId', $objFp
-						->getPathInfo ('fsize')), new
-						S ('Content-Length'));
+                  // Content-Length
+                  Header::setKey (_S ('%fId')
+            ->doToken ('%fId', $objFp
+            ->getPathInfo ('fsize')), new
+            S ('Content-Length'));
 
-            			// Accept-Ranges
-            			Header::setKey (_S ('bytes'),
-						new S ('Accept-Ranges'));
+                  // Accept-Ranges
+                  Header::setKey (_S ('bytes'),
+            new S ('Accept-Ranges'));
 
-            			// Disposition
-            			Header::setKey (_S ('attachment; filename="%fId"')->doToken ('%fId',
-						$objFp->getPathInfo ('fname') . _DOT . $objFp->getPathInfo ('extension')),
-						new S ('Content-Disposition'));
+                  // Disposition
+                  Header::setKey (_S ('attachment; filename="%fId"')->doToken ('%fId',
+            $objFp->getPathInfo ('fname') . _DOT . $objFp->getPathInfo ('extension')),
+            new S ('Content-Disposition'));
 
-            			// Check
-            			self::outputBinary ($objFp);
-            		}
-            		// BK;
-            		break;
+                  // Check
+                  self::outputBinary ($objFp);
+                }
+                // BK;
+                break;
 
                 // Images
                 case _T ('Image'):
@@ -2479,7 +2479,7 @@ abstract class Commons extends Mods {
                     // BK;
                     break;
 
-				// Videos
+        // Videos
                 case _T ('Media'):
                     // Check
                     if ($_GET->offsetExists (_T ('Output'))) {
@@ -2638,39 +2638,39 @@ abstract class Commons extends Mods {
                     static::outputString ($objAjaxString);
                     break;
 
-				case 'Link':
-					// Set
-					$objAjaxString = new S ('var tinyMCELinkList  = new Array (');
+        case 'Link':
+          // Set
+          $objAjaxString = new S ('var tinyMCELinkList  = new Array (');
 
-					// Go
-					foreach ($this
-					->getAttachmentsByItemId ($_GET[_T ('Id')]) as
-					$objK => $objV) {
-						// Title
-						$objLinkTitle = $objV[static::$objAttachmentTitle];
+          // Go
+          foreach ($this
+          ->getAttachmentsByItemId ($_GET[_T ('Id')]) as
+          $objK => $objV) {
+            // Title
+            $objLinkTitle = $objV[static::$objAttachmentTitle];
 
-						// URL
-						$objLinkURL = _S (Architecture::getHost ())
-						->appendString ('/Type/%tId/Method/GetAsBinary/What/Raw/Output/%mId')
-						->doToken ('%tId', $this->getObjectAncestry ())
-						->doToken ('%mId', $objV[static::$objAttachmentId]);
+            // URL
+            $objLinkURL = _S (Architecture::getHost ())
+            ->appendString ('/Type/%tId/Method/GetAsBinary/What/Raw/Output/%mId')
+            ->doToken ('%tId', $this->getObjectAncestry ())
+            ->doToken ('%mId', $objV[static::$objAttachmentId]);
 
-						// Append
-						$objAjaxString->appendString ('["')
-						->appendString ($objLinkTitle)
-						->appendString ('", "')
-						->appendString ($objLinkURL)
-						->appendString ('"],');
-					}
+            // Append
+            $objAjaxString->appendString ('["')
+            ->appendString ($objLinkTitle)
+            ->appendString ('", "')
+            ->appendString ($objLinkURL)
+            ->appendString ('"],');
+          }
 
-					// End
-					$objAjaxString
-					->appendString (');')
-					->doToken (',);', ');');
+          // End
+          $objAjaxString
+          ->appendString (');')
+          ->doToken (',);', ');');
 
-					// Output
-					static::outputString ($objAjaxString);
-					break;
+          // Output
+          static::outputString ($objAjaxString);
+          break;
             }
         }
 
@@ -2872,8 +2872,8 @@ abstract class Commons extends Mods {
                         // Return
                         return _S ('<a href="#' .
                         $objImageId . '" rel="Box">
-                        	<img width="128" src="%uId" />
-                    	</a>
+                          <img width="128" src="%uId" />
+                      </a>
                         <div id="' . $objImageId . '" class="image">
                             <img src="%uId" width="710" />
                         </div>')
@@ -2906,24 +2906,24 @@ abstract class Commons extends Mods {
                     $this->getAttachmentById ($_GET[_T ('Output')],
                     static::$objAttachmentURL)));
 
-					// Header
-					Header::setKey (new S ($objFp->getMimeType ()),
-					new S  ('Content-Type'));
+          // Header
+          Header::setKey (new S ($objFp->getMimeType ()),
+          new S  ('Content-Type'));
 
-					// Content-Length
-					Header::setKey (_S ('%fId')
-					->doToken ('%fId', $objFp
-					->getPathInfo ('fsize')), new
-					S ('Content-Length'));
+          // Content-Length
+          Header::setKey (_S ('%fId')
+          ->doToken ('%fId', $objFp
+          ->getPathInfo ('fsize')), new
+          S ('Content-Length'));
 
-					// Accept-Ranges
-					Header::setKey (_S ('bytes'),
-					new S ('Accept-Ranges'));
+          // Accept-Ranges
+          Header::setKey (_S ('bytes'),
+          new S ('Accept-Ranges'));
 
-					// Disposition
-					Header::setKey (_S ('attachment; filename="%fId"')->doToken ('%fId',
-					$objFp->getPathInfo ('fname') . _DOT . $objFp->getPathInfo ('extension')),
-					new S ('Content-Disposition'));
+          // Disposition
+          Header::setKey (_S ('attachment; filename="%fId"')->doToken ('%fId',
+          $objFp->getPathInfo ('fname') . _DOT . $objFp->getPathInfo ('extension')),
+          new S ('Content-Disposition'));
 
                     // Disposition
                     Header::setKey (_S ('attachment; filename="%fId"')->doToken ('%fId',
@@ -3635,11 +3635,11 @@ abstract class Commons extends Mods {
 
                 // Set
                 $objFp =  new StoragePath (Architecture
-				::pathTo (UPLOAD_DIR, $this->getObjectAncestry ()->toLower (),
-				_I ((int) (string) $this->getAttachmentById ($_GET[_T ('Attachment Id')],
-				static::$objAttachmentPublished))->toDateString ('Y/m/d'),
-				$this->getAttachmentById ($_GET[_T ('Attachment Id')],
-				static::$objAttachmentURL)));
+        ::pathTo (UPLOAD_DIR, $this->getObjectAncestry ()->toLower (),
+        _I ((int) (string) $this->getAttachmentById ($_GET[_T ('Attachment Id')],
+        static::$objAttachmentPublished))->toDateString ('Y/m/d'),
+        $this->getAttachmentById ($_GET[_T ('Attachment Id')],
+        static::$objAttachmentURL)));
 
                 // Form
                 $this->setFieldset (_T ('Edit attachment for: ')->appendString ($this
@@ -4475,36 +4475,36 @@ abstract class Commons extends Mods {
                 break;
 
             case 'widgetItem':
-            	/**
-            	 * To be also expanded for video/audio, when needed;
-            	 */
+              /**
+               * To be also expanded for video/audio, when needed;
+               */
 
-            	// Check
-            	if ($_GET
-            	->offsetExists (_T ('Output'))) {
-            		// Determine
-            		$objFp =  new StoragePath (Architecture
-            		::pathTo (UPLOAD_DIR, $this->getObjectAncestry ()->toLower (),
-            		_I ((int) (string) $this->getAttachmentById ($_GET[_T ('Output')],
-            		static::$objAttachmentPublished))->toDateString ('Y/m/d'),
-            		$this->getAttachmentById ($_GET[_T ('Output')],
-            		static::$objAttachmentURL)));
+              // Check
+              if ($_GET
+              ->offsetExists (_T ('Output'))) {
+                // Determine
+                $objFp =  new StoragePath (Architecture
+                ::pathTo (UPLOAD_DIR, $this->getObjectAncestry ()->toLower (),
+                _I ((int) (string) $this->getAttachmentById ($_GET[_T ('Output')],
+                static::$objAttachmentPublished))->toDateString ('Y/m/d'),
+                $this->getAttachmentById ($_GET[_T ('Output')],
+                static::$objAttachmentURL)));
 
-            		// Header
-            		Header::setKey (new S ($objFp
-            		->getMimeType ()), new S
-            		('Content-Type'));
+                // Header
+                Header::setKey (new S ($objFp
+                ->getMimeType ()), new S
+                ('Content-Type'));
 
-            		// Disposition
-            		Header::setKey (_S ('attachment; filename="%fId"')->doToken ('%fId',
-            		$objFp->getPathInfo ('fname') . _DOT . $objFp->getPathInfo ('extension')),
-            		new S ('Content-Disposition'));
+                // Disposition
+                Header::setKey (_S ('attachment; filename="%fId"')->doToken ('%fId',
+                $objFp->getPathInfo ('fname') . _DOT . $objFp->getPathInfo ('extension')),
+                new S ('Content-Disposition'));
 
-            		// Check
-            		self::outputBinary ($objFp);
-            	}
-            	// BK
-            	break;
+                // Check
+                self::outputBinary ($objFp);
+              }
+              // BK
+              break;
         }
 
         // Switch

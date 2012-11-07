@@ -58,13 +58,13 @@ class Mods extends Forms {
         ->toBoolean () == FALSE) {
             // Go
             $this->doQuery (new S ('CREATE TABLE
-    	    IF NOT EXISTS `_T_system_configurations`
-    	    (`k` varchar(255) NOT NULL,
-	    	`v` longtext NOT NULL,
-	    	PRIMARY KEY  (`k`),
-	    	KEY `v` (`v`(255)))
-	    	ENGINE=InnoDB DEFAULT
-	    	CHARSET=utf8;'));
+          IF NOT EXISTS `_T_system_configurations`
+          (`k` varchar(255) NOT NULL,
+        `v` longtext NOT NULL,
+        PRIMARY KEY  (`k`),
+        KEY `v` (`v`(255)))
+        ENGINE=InnoDB DEFAULT
+        CHARSET=utf8;'));
 
             // Give out one notification, that we're preparing the project (hard-coded text & HTML, cause we want it)
             Error::renderDeath (_T ('Setup'), _T ('Setting things up for you'), NULL, _T ('<span style="font-family: Verdana;

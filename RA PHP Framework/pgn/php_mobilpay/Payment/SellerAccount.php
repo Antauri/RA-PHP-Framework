@@ -5,9 +5,9 @@ class Mobilpay_Payment_SellerAccount
      const ERROR_INVALID_PARAMETER = 0x11110001;
      const ERROR_INVALID_STATUS = 0x11110002;
      const ERROR_ITEM_INSERT_INVALID_INDEX = 0x11110003;
-     
+
      const ERROR_LOAD_FROM_XML_CURRENCY_ATTR_MISSING = 0x31110001;
-     
+
      public $status = null;
      public $paymentMethods = null;
 
@@ -28,9 +28,9 @@ class Mobilpay_Payment_SellerAccount
           {
                throw new Exception('Mobilpay_Payment_SellerAccount::loadFromXml failed; status attribute missing', self::ERROR_LOAD_FROM_XML_CURRENCY_ATTR_MISSING);
           }
-          
+
           $this->status = $status->item(0)->nodeValue;
-          
+
           $pm = $elem->getElementsByTagName('payment_methods');
           if ($pm != null)
           {
@@ -52,7 +52,7 @@ class Mobilpay_Payment_SellerAccount
                }
           }
           $this->paymentMethods = $pm1;
-     
+
      }
 
      public function createXmlElement (DOMDocument $xmlDoc)
@@ -62,28 +62,28 @@ class Mobilpay_Payment_SellerAccount
           {
                throw new Exception('', self::ERROR_INVALID_PARAMETER);
           }
-          
+
           $xmlSac = $xmlDoc->createElement('seller_account');
-          
+
 
           if ($this->status === null)
           {
                throw new Exception('Invalid status', self::ERROR_INVALID_STATUS);
           }
-          
+
           $xmlStaus = $xmlDoc->createElement('status',$this->status);
-          
+
           $xmlSac->appendChild($xmlStaus);
           if ($this->paymentMethods === null || ! is_array($this->paymentMethods))
           {
                throw new Exception('Invalid payment methods', self::ERROR_INVALID_STATUS);
-          
+
           }
           $xmlPaymentMethods = $xmlDoc->createElement('payment_methods');
           foreach ($this->paymentMethods as $type => $status)
           {
                if (in_array($type, array(
-                    'sms' , 
+                    'sms' ,
                     'card')))
                {
                     $$type = $xmlDoc->createElement($type, $status);
@@ -91,7 +91,7 @@ class Mobilpay_Payment_SellerAccount
                }
           }
           $xmlSac->appendChild($xmlPaymentMethods);
-          
+
           return $xmlSac;
      }
 

@@ -5,12 +5,12 @@
  * @copyright NETOPIA System
  * @author Claudiu Tudose
  * @version 1.0
- * 
+ *
  */
-class Mobilpay_Payment_Request_Ntp_Card extends Mobilpay_Payment_Request_Card  
+class Mobilpay_Payment_Request_Ntp_Card extends Mobilpay_Payment_Request_Card
 {
-	function __construct()
-	{
-		parent::__construct();
-	}
+  function __construct()
+  {
+    parent::__construct();
+  }
 }

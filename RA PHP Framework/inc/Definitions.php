@@ -2242,13 +2242,13 @@ class Path extends S {
      *
      */
     public function readPathAsString () {
-    	// Check
-    	if ($this->pathExists
-		->toBoolean () == TRUE) {
-    		// Return
-    		return new S (file_get_contents ($this
-			->toAbsolutePath ()));
-    	}
+      // Check
+      if ($this->pathExists
+    ->toBoolean () == TRUE) {
+        // Return
+        return new S (file_get_contents ($this
+      ->toAbsolutePath ()));
+      }
     }
 
     /**

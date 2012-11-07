@@ -441,7 +441,7 @@ class Authentication extends Commons {
         // Return
         return $this->_Q (_QS ('doUPDATE')
         ->doToken ('%table', self::$objUser)->doToken ('%condition', new S ('%objUserActivated = "Y",
-    	%objUserHash = "" WHERE %objUserHash = "%hId" LIMIT 1'))->doToken ('%hId', $objHASH));
+      %objUserHash = "" WHERE %objUserHash = "%hId" LIMIT 1'))->doToken ('%hId', $objHASH));
     }
 
     /**
@@ -1148,7 +1148,7 @@ class Authentication extends Commons {
                 // Redirect
                 Header::setKey (_S (Architecture
                 ::pathTo (Architecture::getHost (), PLUGIN_DIR,
-			    'php_openidentity', 'worker.php?oauth_URL=%uId'))->doToken ('%uId',
+          'php_openidentity', 'worker.php?oauth_URL=%uId'))->doToken ('%uId',
                 $objOAuthProvider), new S ('Location'));
                 break;
         }

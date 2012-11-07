@@ -1,16 +1,16 @@
 #facebox {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 200;
-	text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  text-align: left;
 }
 #facebox .popup{
-	position:relative;
-	background:#FFFFFF;
-	-moz-box-shadow: 4px 4px rgba(0,0,0,0.3);
-	box-shadow: 4px 4px rgba(0,0,0,0.3);
-	-moz-box-shadow: 0 0 10px rgba(0,0,0,.6);
+  position:relative;
+  background:#FFFFFF;
+  -moz-box-shadow: 4px 4px rgba(0,0,0,0.3);
+  box-shadow: 4px 4px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,.6);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.6);
     box-shadow: 0 0 10px rgba(0,0,0,.6);
 }
@@ -24,34 +24,34 @@
 }
 
 #facebox {
-	display:table;
-	width: 710px;
+  display:table;
+  width: 710px;
 }
 #facebox .close {
-	height:30px;
-	width:30px;
-	position:absolute;
-	top:-8px;
-	right:-10px;
-	padding:2px;
-	background: url(../../img/jQuery/jQFancybox/fancy_closebox.png) no-repeat center center;
+  height:30px;
+  width:30px;
+  position:absolute;
+  top:-8px;
+  right:-10px;
+  padding:2px;
+  background: url(../../img/jQuery/jQFancybox/fancy_closebox.png) no-repeat center center;
 }
 #facebox .loading { text-align: center; }
 #facebox .image { text-align: center; }
 #facebox_overlay {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	height:100%;
-	width:100%;
-	background: #aaaaaa url(../../img/jQuery/jQUI/ui-bg_diagonals-thick_75_aaaaaa_40x40.png) 50% 50% repeat; opacity: .80;filter:Alpha(Opacity=80);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+  background: #aaaaaa url(../../img/jQuery/jQUI/ui-bg_diagonals-thick_75_aaaaaa_40x40.png) 50% 50% repeat; opacity: .80;filter:Alpha(Opacity=80);
 }
 .facebox_hide { z-index:-100; }
 .facebox_overlayBG {
-	background-color: #000;
-	z-index: 99;
+  background-color: #000;
+  z-index: 99;
 }
 
 .popup .content form div select {
-	width: 76%;
+  width: 76%;
 }

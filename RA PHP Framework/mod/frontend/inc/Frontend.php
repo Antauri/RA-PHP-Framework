@@ -119,7 +119,7 @@ class Frontend extends Commons {
     private function changeStreamTokens () {
         // Changes
         self::manageTAG (_S ("og:image"), _S (Architecture::getHost () .
-		"/mod/frontend/skn/default/img/others/Facebook.jpg"));
+    "/mod/frontend/skn/default/img/others/Facebook.jpg"));
     }
 
     /**

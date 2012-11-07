@@ -16,27 +16,27 @@ article.Texts_widgetItem {
 
 div.Texts_widgetItem_Tags {
     width: 90%;
-	margin-top: 20px;
-	margin-left: auto;
+  margin-top: 20px;
+  margin-left: auto;
     margin-right: auto;
     border-top: 1px dashed #DFDFDF;
 }
 
 div.Texts_widgetItem_Previous_Next_Links {
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
 }
 
 div.Texts_widgetItem_Previous_Link,
 div.Texts_widgetItem_Next_Link {
-	text-align: left;
+  text-align: left;
     width: 45%;
     float: left;
 }
 
 div.Texts_widgetItem_Next_Link {
-	text-align: right;
-	float: right;
+  text-align: right;
+  float: right;
 }

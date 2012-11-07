@@ -1,54 +1,54 @@
 $(document).ready (function () {
-	// Go
-	$.objectDataStorage.oTable = $('#manageGroups').dataTable ({
-		"sDom": '<"clear">lfrtip',
-		"aLengthMenu": aLengthMenuDefault,
-		"bPaginate": true,
-		"bLengthChange": true,
-		"bFilter": true,
-		"bSort": true,
-		"bInfo": true,
-		"bDeferRender": true,
-		"bAutoWidth": false,
-		"bProcessing": false,
-		"bServerSide": true,
-		"sAjaxSource": window.location,
-		"oLanguage": {
-			"sSearch": "Search any:"
-		},
-		"fnServerData": function (sSource, aoData, fnCallback) {
-			$.ajax ({
-				"dataType": 'json',
-				"type": "POST",
-				"url": sSource,
-				"data": aoData,
-				"success": fnCallback
-			});
-		},
-		"aaSorting": [[0, "asc"], [1, "asc"]],
-		"aoColumns": [{"bSortable": true, "bSearchable": false, "bVisible": false},
-		              {"bSortable": true, "bSearchable": false, "bVisible": false},
-		              {"bSortable": true, "bSearchable": false, "bVisible": false},
-		              {"bSortable": false},
-		              {"bSortable": false, "bSearchable": false}]
-	});
+  // Go
+  $.objectDataStorage.oTable = $('#manageGroups').dataTable ({
+    "sDom": '<"clear">lfrtip',
+    "aLengthMenu": aLengthMenuDefault,
+    "bPaginate": true,
+    "bLengthChange": true,
+    "bFilter": true,
+    "bSort": true,
+    "bInfo": true,
+    "bDeferRender": true,
+    "bAutoWidth": false,
+    "bProcessing": false,
+    "bServerSide": true,
+    "sAjaxSource": window.location,
+    "oLanguage": {
+      "sSearch": "Search any:"
+    },
+    "fnServerData": function (sSource, aoData, fnCallback) {
+      $.ajax ({
+        "dataType": 'json',
+        "type": "POST",
+        "url": sSource,
+        "data": aoData,
+        "success": fnCallback
+      });
+    },
+    "aaSorting": [[0, "asc"], [1, "asc"]],
+    "aoColumns": [{"bSortable": true, "bSearchable": false, "bVisible": false},
+                  {"bSortable": true, "bSearchable": false, "bVisible": false},
+                  {"bSortable": true, "bSearchable": false, "bVisible": false},
+                  {"bSortable": false},
+                  {"bSortable": false, "bSearchable": false}]
+  });
 
-	// Show
-	$('.generic-actions').show ();
+  // Show
+  $('.generic-actions').show ();
 
     // Process
     $('tr').live ('mouseover', function (objEvent) {
-    	// Append
-    	$('#manageGroups tbody tr').each (function (objI) {
-        	// Tds
-        	var objData = $.objectDataStorage.oTable.fnGetData (this);
-        	var objId = objData[1];
+      // Append
+      $('#manageGroups tbody tr').each (function (objI) {
+          // Tds
+          var objData = $.objectDataStorage.oTable.fnGetData (this);
+          var objId = objData[1];
 
-        	// Attributes
-        	$(this).attr ('dragDropId', objId);
+          // Attributes
+          $(this).attr ('dragDropId', objId);
         });
 
-    	 // Drag
+       // Drag
         $('tr').draggable ({
             revert: 'invalid',
             opacity: 0.7,
@@ -74,7 +74,7 @@ $(document).ready (function () {
                     buttons: {
                         'First, under it': function () {
                             // Change address and redirect;
-                        	window.location = window.location + '/Do/Move/Id/' +
+                          window.location = window.location + '/Do/Move/Id/' +
                             draggedId + '/To/' + droppedId + '/Type/' + 1;
                         },
                         'Last, under it': function () {

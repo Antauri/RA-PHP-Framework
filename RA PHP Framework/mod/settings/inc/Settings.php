@@ -123,23 +123,23 @@ class Settings extends Commons {
 
                     // Register a router for every moding ...
                     foreach (self::getRegistered () as $objK => $objV) {
-                    	// Check
-                    	switch ($objV['Obj']) {
-                    		case 'Administration':
-                    		case 'Authentication':
-                    		case 'Codes':
-                    		case 'Crons':
-                    		case 'Frontend':
-                    		case 'Settings':
-                    			break;
+                      // Check
+                      switch ($objV['Obj']) {
+                        case 'Administration':
+                        case 'Authentication':
+                        case 'Codes':
+                        case 'Crons':
+                        case 'Frontend':
+                        case 'Settings':
+                          break;
 
-                    		default:
-                    			// Route
-                    			Environment::rewriteHTLine
-                    			(_S ('RewriteRule ^%kId/(.*)$ Section/%kId/Item/$1 [L]')
-                    			->doToken ('%kId', $objV['Obj']));
-                    			break;
-                    	}
+                        default:
+                          // Route
+                          Environment::rewriteHTLine
+                          (_S ('RewriteRule ^%kId/(.*)$ Section/%kId/Item/$1 [L]')
+                          ->doToken ('%kId', $objV['Obj']));
+                          break;
+                      }
                     }
                 }
             }
@@ -318,7 +318,7 @@ class Settings extends Commons {
     public static final function routeTo (S $objCode) {
         // Switch
         switch ($objCode) {
-        	// 404
+          // 404
             case '404':
                 // Go
                 Header::setKey (Location::staticTo (new
@@ -914,7 +914,7 @@ class Settings extends Commons {
                         S ('Cron.State'),
                         _T ('Run'));
 
-                    	// Output
+                      // Output
                         self::outputString (new
                         S ('No Run'));
                     }

@@ -7,25 +7,25 @@ html, body {
 }
 
 *, *:focus, *:actve {
-	outline: none !important;
+  outline: none !important;
 }
 
 ::-moz-focus-inner {
-	outline: none;
-	border: 0px;
+  outline: none;
+  border: 0px;
 }
 
 .div_Hidden {
-	display: none;
+  display: none;
 }
 
 .Invisible {
-	height: 0px !important;
-	border: 0px !important;
-	margin: 0px !important;
-	padding: 0px !important;
-	font-size: 0px !important;
-	opacity: 0px !important;
+  height: 0px !important;
+  border: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  font-size: 0px !important;
+  opacity: 0px !important;
 }
 
 .div_CLEAR {
@@ -36,13 +36,13 @@ html, body {
 }
 
 .div_Spacer_10px {
-	height: 10px;
+  height: 10px;
 }
 
 .dropZoneInput {
-	float: left;
-	width: 77%;
-	box-sizing: border-box;
+  float: left;
+  width: 77%;
+  box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     padding: 6px;
@@ -50,8 +50,8 @@ html, body {
 }
 
 .dropZoneInput:hover {
-	background: rgba(0, 191, 0, 0.10);
-	-webkit-box-shadow: 0 0 4px rgba(0, 191, 0, 0.2) inset;
+  background: rgba(0, 191, 0, 0.10);
+  -webkit-box-shadow: 0 0 4px rgba(0, 191, 0, 0.2) inset;
     -moz-box-shadow: 0 0 4px rgba(0, 191, 0, 0.2) inset;
     box-shadow: 0 0 4px rgba(0, 191, 0, 0.2) inset;
     cursor: pointer;
@@ -65,7 +65,7 @@ html, body {
 
 
 .dropZoneActive {
-	background: rgba(0, 191, 0, 0.10);
+  background: rgba(0, 191, 0, 0.10);
     -webkit-box-shadow: 0 0 4px rgba(0, 191, 0, 0.5) inset;
     -moz-box-shadow: 0 0 4px rgba(0, 191, 0, 0.5) inset;
     box-shadow: 0 0 4px rgba(0, 191, 0, 0.5) inset;
@@ -73,7 +73,7 @@ html, body {
 }
 
 input[type=file] {
-	height: 0px;
+  height: 0px;
 }
 
 html,
@@ -162,124 +162,124 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 ins {
-	background-color: #ff9;
-	color: #000;
-	text-decoration: none;
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
 }
 
 mark {
-	background-color: #ff9;
-	color: #000;
-	font-style: italic;
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
 }
 
 del {
-	text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 abbr[title], dfn[title] {
-	border-bottom: 1px dotted;
-	cursor: pointer;
+  border-bottom: 1px dotted;
+  cursor: pointer;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 1px solid #ccc;
-	margin: 0px;
-	padding: 0px;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 0px;
+  padding: 0px;
 }
 
 input,
 select {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 pre,
 code,
 kbd,
 samp {
-	font-family: "Monospace", sans-serif;
-	font-size: 12px;
+  font-family: "Monospace", sans-serif;
+  font-size: 12px;
 }
 
 nav ul,
 nav li {
-	margin: 0px;
-	list-style: none;
-	list-style-image: none;
+  margin: 0px;
+  list-style: none;
+  list-style-image: none;
 }
 
 small {
-	font-size: 85%;
+  font-size: 85%;
 }
 
 td {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 tr.ui-draggable-dragging {
-	background: #FF6600;
-	border-top: 1px solid #CACACA;
-	border-bottom: 1px solid #CACACA;
+  background: #FF6600;
+  border-top: 1px solid #CACACA;
+  border-bottom: 1px solid #CACACA;
     padding-right: 10px;
 }
 
 tr.ui-draggable-dragging td:FIRST-CHILD {
-	min-width: 700px;
+  min-width: 700px;
 }
 
 sub,
 sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	left: 5px;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  left: 5px;
 }
 
 sup {
-	top: -0.5em;
+  top: -0.5em;
 }
 
 sub {
-	bottom: -0.25em;
+  bottom: -0.25em;
 }
 
 pre {
-	white-space: pre;
-	white-space: pre-wrap;
-	word-wrap: break-word;
-	padding: 15px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 15px;
 }
 
 .ie7 img {
-	-ms-interpolation-mode: bicubic;
+  -ms-interpolation-mode: bicubic;
 }
 
 a:link {
-	-webkit-tap-highlight-color: #FF5E99;
+  -webkit-tap-highlight-color: #FF5E99;
 }
 
 body,
 select,
 input,
 textarea {
-	color: #666;
+  color: #666;
 }
 
 body {
@@ -289,7 +289,7 @@ body {
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 body section[role=navigation] {
@@ -317,7 +317,7 @@ strong, th {
 }
 
 strong {
-	font-size: 12px;
+  font-size: 12px;
 }
 
 em {
@@ -327,11 +327,11 @@ em {
 
 ul,
 ol {
-	margin: 0 0 1em 2em;
+  margin: 0 0 1em 2em;
 }
 
 ol {
-	list-style-type: decimal;
+  list-style-type: decimal;
 }
 
 h1,
@@ -351,45 +351,45 @@ a {
 }
 
 a:hover {
-	color: #036;
+  color: #036;
 }
 
 a:hover, a:active {
-	outline: none;
+  outline: none;
 }
 
 .small {
-	width: 33%;
+  width: 33%;
 }
 
 .medium {
-	width: 66%;
+  width: 66%;
 }
 
 .large, input[type=submit] {
-	width: 99%;
+  width: 99%;
 }
 
 .left {
-	float: left;
+  float: left;
 }
 
 .right {
-	float: right;
+  float: right;
 }
 
 td.alignleft {
-	text-align: left;
+  text-align: left;
 }
 
 input[type=submit] {
-	font-size: 32px;
-	font-family: Verdana, Tahoma, Arial, sans-serif;;
-	text-align: right;
-	height: 0px !important;
-	padding: 0px !important;
-	margin: 0px !important;
-	border: 0px !important;
+  font-size: 32px;
+  font-family: Verdana, Tahoma, Arial, sans-serif;;
+  text-align: right;
+  height: 0px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  border: 0px !important;
 }
 
 section[role=navigation] header {
@@ -407,7 +407,7 @@ section[role=navigation] header a {
 }
 
 section[role=navigation] header a span {
-	font-size: 32px;
+  font-size: 32px;
     color: #444444;
 }
 
@@ -451,7 +451,7 @@ section[role=navigation] header h1 {
 }
 
 #user-info div > a:hover {
-	color: #af442f;
+  color: #af442f;
 }
 
 #user-info em {
@@ -479,20 +479,20 @@ section[role=navigation] header h1 {
 }
 
 #main-nav > ul {
-	background: URL(../img/others/bg_aside_nav.png) no-repeat bottom;
+  background: URL(../img/others/bg_aside_nav.png) no-repeat bottom;
 }
 
 #main-nav ul li {
-	background: URL(../img/others/bg_aside_nav.png) no-repeat 0 0;
-	padding-left: 10px;
+  background: URL(../img/others/bg_aside_nav.png) no-repeat 0 0;
+  padding-left: 10px;
 }
 
 #main-nav ul li.current {
-	background: URL(../img/others/bg_aside_nav_current.png) no-repeat 0 0;
+  background: URL(../img/others/bg_aside_nav_current.png) no-repeat 0 0;
 }
 
 #main-nav ul li.current a, #main-nav ul li.current a:hover {
-	color: #ae432e;
+  color: #ae432e;
 }
 
 #main-nav ul li a {
@@ -511,35 +511,35 @@ section[role=navigation] header h1 {
 }
 
 #main-nav ul li a:hover {
-	color: #ae432e;
+  color: #ae432e;
 }
 
 #main-nav ul li a.dashboard {
-	background: URL(../img/others/icon_nav_dashboard.png) no-repeat 22px 8px;
+  background: URL(../img/others/icon_nav_dashboard.png) no-repeat 22px 8px;
 }
 
 #main-nav ul li a.projects {
-	background: URL(../img/others/icon_nav_projects.png) no-repeat 25px 12px;
+  background: URL(../img/others/icon_nav_projects.png) no-repeat 25px 12px;
 }
 
 #main-nav ul li a.products {
-	background: URL(../img/others/icon_nav_products.png) no-repeat 25px 12px;
+  background: URL(../img/others/icon_nav_products.png) no-repeat 25px 12px;
 }
 
 #main-nav ul li a.events {
-	background: URL(../img/others/icon_nav_events.png) no-repeat 25px 12px;
+  background: URL(../img/others/icon_nav_events.png) no-repeat 25px 12px;
 }
 
 #main-nav ul li a.articles {
-	background: URL(../img/others/icon_nav_articles.png) no-repeat 25px 12px;
+  background: URL(../img/others/icon_nav_articles.png) no-repeat 25px 12px;
 }
 
 #main-nav ul li a.gallery {
-	background: URL(../img/others/icon_nav_gallery.png) no-repeat 25px 12px;
+  background: URL(../img/others/icon_nav_gallery.png) no-repeat 25px 12px;
 }
 
 #main-nav ul li a.settings {
-	background: URL(../img/others/icon_nav_settings.png) no-repeat 25px 12px;
+  background: URL(../img/others/icon_nav_settings.png) no-repeat 25px 12px;
 }
 
 #main-nav ul ul {
@@ -548,7 +548,7 @@ section[role=navigation] header h1 {
 }
 
 #main-nav ul li li {
-	list-style-type: square;
+  list-style-type: square;
     xbackground: URL(../img/others/bg_list_style.png) no-repeat 0 7px;
 }
 
@@ -565,7 +565,7 @@ section[role=navigation] header h1 {
 
 #main-nav ul li li a:hover,
 #main-nav ul li.current li a:hover {
-	color: #ae432e;
+  color: #ae432e;
 }
 
 #main-nav ul li span {
@@ -586,7 +586,7 @@ section[role=navigation] header h1 {
 
 .ie7 #main-nav ul li span,
 .ie8 #main-nav ul li span {
-	top: -28px;
+  top: -28px;
 }
 
 #main-nav ul li.current a.current {
@@ -608,7 +608,7 @@ section[role=navigation] header h1 {
 }
 
 .sidebar p:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .sidebar h2 {
@@ -630,11 +630,11 @@ section[role=navigation] header h1 {
 }
 
 .sidebar.separator {
-	padding-top: 25px;
+  padding-top: 25px;
 }
 
 .sidebar .button-link {
-	float: right;
+  float: right;
 }
 
 .nested {
@@ -649,11 +649,11 @@ section[role=navigation] header h1 {
 }
 
 .ie7 .nested, .ie8 .nested {
-	border: 1px solid #bfbfbf;
+  border: 1px solid #bfbfbf;
 }
 
 .sidebar.nested {
-	background-color: #d9d9d9;
+  background-color: #d9d9d9;
 }
 
 article.nested {
@@ -668,11 +668,11 @@ article.nested header {
 }
 
 article.nested header h2 {
-	color: #ae432e;
+  color: #ae432e;
 }
 
 article.nested section {
-	margin: 0 20px 20px;
+  margin: 0 20px 20px;
 }
 
 article.nested footer {
@@ -681,33 +681,33 @@ article.nested footer {
 }
 
 article.nested .tab-switch li a.current {
-	background-image: URL(../img/others/icon_tab_nested.png);
+  background-image: URL(../img/others/icon_tab_nested.png);
 }
 
 article.nested .tab.sidetabs {
-	background-image: URL(../img/others/bg_sidetab_nested.png);
+  background-image: URL(../img/others/bg_sidetab_nested.png);
 }
 
 article.nested .sidetab-switch li {
-	border-bottom-color: #bfbfbf;
+  border-bottom-color: #bfbfbf;
 }
 
 article.nested .sidetab-switch li a.current {
-	border-right-color: #e6e6e6;
+  border-right-color: #e6e6e6;
 }
 
 article.nested fieldset {
-	border-color: #bfbfbf;
+  border-color: #bfbfbf;
 }
 
 article.nested section h3,
 article.nested section h4,
 article.nested section h5 {
-	color: #666;
+  color: #666;
 }
 
 article {
-	margin-bottom: 2%;
+  margin-bottom: 2%;
 }
 
 article header {
@@ -723,25 +723,25 @@ article header h2 {
 }
 
 article header nav {
-	float: right;
+  float: right;
 }
 
 article section {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 article section h3,
 article section h4,
 article section h5 {
-	margin-bottom: .8em;
+  margin-bottom: .8em;
 }
 
 article section h3 {
-	font-size: 153.9%;
+  font-size: 153.9%;
 }
 
 article section h4 {
-	font-size: 131%;
+  font-size: 131%;
 }
 
 article section h5 {
@@ -764,7 +764,7 @@ article section ul li {
 }
 
 article section ol li {
-	line-height: 160%;
+  line-height: 160%;
 }
 
 article footer {
@@ -796,7 +796,7 @@ article footer {
 }
 
 .clearrm {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 .clearfix {
@@ -817,11 +817,11 @@ article footer {
 }
 
 .tab-switch li:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 .tab-switch li:last-child a {
-	padding-right: 0;
+  padding-right: 0;
 }
 
 .tab-switch li a {
@@ -833,7 +833,7 @@ article footer {
 }
 
 .tab-switch li a:hover {
-	color: #ae432e;
+  color: #ae432e;
 }
 
 .tab-switch li a.current {
@@ -871,7 +871,7 @@ section .sidetab-switch li {
 }
 
 .sidetab-switch li a:hover {
-	color: #ae432e;
+  color: #ae432e;
 }
 
 .sidetab-switch li a.current {
@@ -917,15 +917,15 @@ section .sidetab-switch li {
 }
 
 .button-link.blue {
-	background-color: #066d99;
+  background-color: #066d99;
 }
 
 .button-link.green {
-	background-color: #6a9912;
+  background-color: #6a9912;
 }
 
 .button-link.gray {
-	background-color: #929494;
+  background-color: #929494;
 }
 
 .button-link:hover {
@@ -972,12 +972,12 @@ input[type=submit]:hover {
 
 .no-cssgradients .button,
 .no-cssgradients button {
-	background: #ae432e URL(../img/others/btn_red.png) repeat-x left top;
+  background: #ae432e URL(../img/others/btn_red.png) repeat-x left top;
 }
 
 .no-cssgradients .button:hover,
 .no-cssgradients button:hover {
-	background: #963c2a URL(../img/others/btn_red_hover.png) repeat-x left top;
+  background: #963c2a URL(../img/others/btn_red_hover.png) repeat-x left top;
 }
 
 .button.blue, button.blue {
@@ -997,12 +997,12 @@ input[type=submit]:hover {
 
 .no-cssgradients .button.blue,
 .no-cssgradients button.blue {
-	background: #088ec8 URL(../img/others/btn_blue.png) repeat-x left top;
+  background: #088ec8 URL(../img/others/btn_blue.png) repeat-x left top;
 }
 
 .no-cssgradients .button.blue:hover,
 .no-cssgradients button.blue:hover {
-	background: #0a7dae URL(../img/others/btn_blue_hover.png) repeat-x left top;
+  background: #0a7dae URL(../img/others/btn_blue_hover.png) repeat-x left top;
 }
 
 .button.green,
@@ -1024,12 +1024,12 @@ button.green:hover {
 
 .no-cssgradients .button.green,
 .no-cssgradients button.green {
-	background: #78ac15 URL(../img/others/btn_green.png) repeat-x left top;
+  background: #78ac15 URL(../img/others/btn_green.png) repeat-x left top;
 }
 
 .no-cssgradients .button.green:hover,
 .no-cssgradients button.green:hover {
-	background: #679212 URL(../img/others/btn_green_hover.png) repeat-x left top;
+  background: #679212 URL(../img/others/btn_green_hover.png) repeat-x left top;
 }
 
 .button.gray,
@@ -1051,12 +1051,12 @@ button.gray:hover {
 }
 .no-cssgradients .button.gray,
 .no-cssgradients button.gray {
-	background: #abacac URL(../img/others/btn_gray.png) repeat-x left top;
+  background: #abacac URL(../img/others/btn_gray.png) repeat-x left top;
 }
 
 .no-cssgradients .button.gray:hover,
 .no-cssgradients button.gray:hover {
-	background: #9a9c9c URL(../img/others/btn_gray_hover.png) repeat-x left top;
+  background: #9a9c9c URL(../img/others/btn_gray_hover.png) repeat-x left top;
 }
 
 .button.disabled, button: disabled {
@@ -1097,32 +1097,32 @@ button.gray:hover {
 }
 
 .close-notification:hover {
-	color: #333;
+  color: #333;
 }
 
 .notification .from {
-	float: left;
-	width: 45%;
-	margin-bottom: 4px;
+  float: left;
+  width: 45%;
+  margin-bottom: 4px;
 }
 
 .notification .on {
-	float: right;
-	width: 45%;
-	text-align: right;
-	padding-right: 24px;
+  float: right;
+  width: 45%;
+  text-align: right;
+  padding-right: 24px;
 }
 
 .notification .msg {
-	clear: both;
-	padding: 10px;
-	padding-top: 0px;
-	border-top: 2px solid rgba(255, 102, 0, 0.3);
-	color: #222222;
+  clear: both;
+  padding: 10px;
+  padding-top: 0px;
+  border-top: 2px solid rgba(255, 102, 0, 0.3);
+  color: #222222;
 }
 
 .notification .msg:before {
-	content: "\00AB";
+  content: "\00AB";
 }
 
 .notification .msg:after {
@@ -1136,7 +1136,7 @@ button.gray:hover {
 }
 
 .notification.error strong {
-	color: #ae432e;
+  color: #ae432e;
 }
 
 .notification.success {
@@ -1146,7 +1146,7 @@ button.gray:hover {
 }
 
 .notification.success strong {
-	color: #69990f;
+  color: #69990f;
 }
 
 .notification.attention {
@@ -1156,7 +1156,7 @@ button.gray:hover {
 }
 
 .notification.attention strong {
-	color: #be8007;
+  color: #be8007;
 }
 
 .notification.information {
@@ -1166,7 +1166,7 @@ button.gray:hover {
 }
 
 .notification.information strong {
-	color: #0576a6;
+  color: #0576a6;
 }
 
 .notification.note {
@@ -1176,7 +1176,7 @@ button.gray:hover {
 }
 
 .notification.note strong {
-	color: #737373;
+  color: #737373;
 }
 
 #breadcrumbs {
@@ -1213,12 +1213,12 @@ button.gray:hover {
 }
 
 #breadcrumbs li:last-child {
-	margin-right: 0px;
+  margin-right: 0px;
 }
 
 #breadcrumbs li a {
-	display: block;
-	text-shadow: 0 3px 3px #cacaca;
+  display: block;
+  text-shadow: 0 3px 3px #cacaca;
 }
 
 #breadcrumbs li.homepage a {
@@ -1229,7 +1229,7 @@ button.gray:hover {
 }
 
 #breadcrumbs li.homepage a:hover {
-	background-position: 0 -16px;
+  background-position: 0 -16px;
 }
 
 .progress-bar {
@@ -1263,19 +1263,19 @@ button.gray:hover {
 }
 
 .progress-bar div span sup {
-	top: -0.2em;
+  top: -0.2em;
 }
 
 .progress-bar.red div {
-	background-color: #ae432e;
+  background-color: #ae432e;
 }
 
 .progress-bar.blue div {
-	background-color: #058dc7;
+  background-color: #058dc7;
 }
 
 .progress-bar.green div {
-	background-color: #77ab13;
+  background-color: #77ab13;
 }
 
 article img {
@@ -1286,19 +1286,19 @@ article img {
 
 div.tab > img,
 div.tab > .image-frame img {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 .image-frame {
-	position: relative;
+  position: relative;
 }
 
 .image-frame.left {
-	margin-right: 15px;
+  margin-right: 15px;
 }
 
 .image-frame.right {
-	margin-left: 15px;
+  margin-left: 15px;
 }
 
 .image-actions {
@@ -1336,7 +1336,7 @@ div.tab > .image-frame img {
 }
 
 .image-actions li a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .image-gallery {
@@ -1365,31 +1365,31 @@ div.tab > .image-frame img {
 }
 
 .loader.red {
-	background: URL(../img/others/ajax_loading_red.gif) no-repeat transparent;
+  background: URL(../img/others/ajax_loading_red.gif) no-repeat transparent;
 }
 
 .loader.green {
-	background: URL(../img/others/ajax_loading_green.gif) no-repeat transparent;
+  background: URL(../img/others/ajax_loading_green.gif) no-repeat transparent;
 }
 
 .loader.blue {
-	background: URL(../img/others/ajax_loading_blue.gif) no-repeat transparent;
+  background: URL(../img/others/ajax_loading_blue.gif) no-repeat transparent;
 }
 
 .nested .loader {
-	background: URL(../img/others/ajax_loading_nested.gif) no-repeat transparent;
+  background: URL(../img/others/ajax_loading_nested.gif) no-repeat transparent;
 }
 
 .nested .loader.red {
-	background: URL(../img/others/ajax_loading_red_nested.gif) no-repeat transparent;
+  background: URL(../img/others/ajax_loading_red_nested.gif) no-repeat transparent;
 }
 
 .nested .loader.green {
-	background: URL(../img/others/ajax_loading_green_nested.gif) no-repeat transparent;
+  background: URL(../img/others/ajax_loading_green_nested.gif) no-repeat transparent;
 }
 
 .nested .loader.blue {
-	background: URL(../img/others/ajax_loading_blue_nested.gif) no-repeat transparent;
+  background: URL(../img/others/ajax_loading_blue_nested.gif) no-repeat transparent;
 }
 
 form {
@@ -1398,19 +1398,19 @@ form {
 }
 
 form.table-form {
-	margin-top: 0;
+  margin-top: 0;
 }
 
 button,
 input,
 select,
 textarea {
-	margin: 0;
+  margin: 0;
 }
 
 textarea {
-	overflow: auto;
-	min-height: 200px;
+  overflow: auto;
+  min-height: 200px;
 }
 
 fieldset {
@@ -1425,7 +1425,7 @@ fieldset {
 }
 
 .ie8 fieldset {
-	padding-top: 15px;
+  padding-top: 15px;
 }
 
 legend {
@@ -1435,19 +1435,19 @@ legend {
 }
 
 .ie6 legend, .ie7 legend {
-	margin-left: -7px;
+  margin-left: -7px;
 }
 
 .ie8 legend, .ie7 legend {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .ie8 legend {
-	top: -25px;
+  top: -25px;
 }
 
 .ie7 legend {
-	top: -35px;
+  top: -35px;
 }
 
 form dt {
@@ -1487,37 +1487,37 @@ label,
 
 input.small,
 textarea.small {
-	width: 25%;
+  width: 25%;
 }
 
 input.medium,
 textarea.medium {
-	width: 50%;
+  width: 50%;
 }
 
 input.large,
 textarea.large {
-	width: 75%;
+  width: 75%;
 }
 
 input.full,
 textarea.full {
-	width: 97%;
+  width: 97%;
 }
 
 input[type=text],
 input[type=password],
 textarea,
 select {
-	padding: 6px;
+  padding: 6px;
 }
 
 input[type="radio"] {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 input[type="checkbox"] {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 input[type="checkbox"],
@@ -1527,11 +1527,11 @@ input[type="radio"] {
 }
 
 .ie7 input[type="checkbox"] {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 .ie6 input {
-	vertical-align: text-bottom;
+  vertical-align: text-bottom;
 }
 
 label,
@@ -1539,15 +1539,15 @@ input[type="button"],
 input[type="submit"],
 input[type="image"],
 button {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 label {
-	font-family: Verdana, Tahoma, Arial, sans-serif;
-	width: 20%;
-	display: block;
-	float: left;
-	font-weight: normal;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  width: 20%;
+  display: block;
+  float: left;
+  font-weight: normal;
     padding: 5px;
     font-size: 14px;
     background: #F3F3F3;
@@ -1570,15 +1570,15 @@ select {
 
 .checkbox label,
 .radio label {
-	font-family: Verdana, Tahoma, Arial, sans-serif;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
 }
 
 .checkbox {
-	top: -6px;
+  top: -6px;
 }
 
 .radio {
-	top: -3px;
+  top: -3px;
 }
 
 button {
@@ -1594,11 +1594,11 @@ form span.valid-side-note, span.invalid-side-note {
 }
 
 form span.valid-side-note {
-	background-image: URL(../img/others/icon_success.png);
+  background-image: URL(../img/others/icon_success.png);
 }
 
 form span.invalid-side-note {
-	background-image: URL(../img/others/icon_error.png);
+  background-image: URL(../img/others/icon_error.png);
 }
 
 input.valid, textarea.valid {
@@ -1633,11 +1633,11 @@ textarea:focus {
 .ie7 .checkbox,
 .ie8 .checkbox,
 .ie9 .checkbox {
-	top: -7px;
+  top: -7px;
 }
 
 .ie7 .radio, .ie8 .radio, .ie9 .radio {
-	top: -5px;
+  top: -5px;
 }
 
 .ie7 td select {
@@ -1661,24 +1661,24 @@ td {
 .nested table,
 .nested th,
 .nested td {
-	border-color: #bfbfbf;
+  border-color: #bfbfbf;
 }
 
 th {
-	font-size: 116%;
-	cursor: pointer;
+  font-size: 116%;
+  cursor: pointer;
 }
 
 tbody tr:nth-child(odd) {
-	background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 tbody tr:nth-child(even) {
-	background-color: #fafafa;
+  background-color: #fafafa;
 }
 
 tbody tr:hover {
-	background-color: #ececec;
+  background-color: #ececec;
 }
 
 table input[type="checkbox"] {
@@ -1701,9 +1701,9 @@ table input[type="checkbox"] {
 }
 
 .easyWidget {
-	width: 90%;
-	margin-bottom: 6px;
-	margin-left: auto;
+  width: 90%;
+  margin-bottom: 6px;
+  margin-left: auto;
     margin-right: auto;
 }
 
@@ -1748,32 +1748,32 @@ table input[type="checkbox"] {
 }
 
 .easyWidget-content UL LI A {
-	text-decoration: none;
-	height: auto;
-	padding: 0px;
-	margin: 0px;
+  text-decoration: none;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
 }
 
 .easyWidget-content UL LI {
-	line-height: 13px;
+  line-height: 13px;
     padding: 0px;
     margin: 0px;
     font-size: 12px;
 }
 
 .easyWidget-content UL {
-	margin-top: 6px;
-	margin-left: 60px;
-	width: 60%;
+  margin-top: 6px;
+  margin-left: 60px;
+  width: 60%;
 }
 
 .easyWidget-content H1 {
-	margin: 4px;
-	width: 80%;
-	font-size: 12px;
-	border-bottom: 2px solid #EAEAEA;
-	font-style: italic;
-	margin-left: 20px;
+  margin: 4px;
+  width: 80%;
+  font-size: 12px;
+  border-bottom: 2px solid #EAEAEA;
+  font-style: italic;
+  margin-left: 20px;
 }
 
 FIELDSET {
@@ -1826,13 +1826,13 @@ FIELDSET {
 }
 
 td {
-	border-right: 0px solid #DFDFDF;
-	padding-left: 10px;
-	font-size: 12px;
+  border-right: 0px solid #DFDFDF;
+  padding-left: 10px;
+  font-size: 12px;
 }
 
 table td:last-child {
-	border-right: 0px;
+  border-right: 0px;
 }
 
 .checkboxFileController {
@@ -1842,15 +1842,15 @@ table td:last-child {
 }
 
 th.actions {
-	width: 200px;
+  width: 200px;
 }
 
 button.erase {
-	width: 24px;
-	height: 24px;
-	padding-top: 4px;
-	background: URL('../img/others/erase.png') no-repeat center center;
-	display: none;
+  width: 24px;
+  height: 24px;
+  padding-top: 4px;
+  background: URL('../img/others/erase.png') no-repeat center center;
+  display: none;
 }
 
 button.edit {
@@ -1862,7 +1862,7 @@ button.edit {
 }
 
 button.properties {
-	width: 24px;
+  width: 24px;
     height: 24px;
     padding-top: 2px;
     margin-left: 4px;
@@ -1916,30 +1916,30 @@ button.attachments {
 }
 
 .generic-actions {
-	float: right;
-	margin-top: -5px;
-	margin-bottom: 10px;
-	margin-right: 1px;
-	display: none;
+  float: right;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  margin-right: 1px;
+  display: none;
 }
 
 button.add, button.exportAsCSV {
-	font-size: 12px;
-	font-family: Verdana, Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
 }
 
 input,
 select,
 textarea,
 input[type=submit] {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 input[type=submit] {
-	width: 99.3%;
-	text-transform: lowercase;
+  width: 99.3%;
+  text-transform: lowercase;
 }
 
 tr {
@@ -1949,12 +1949,12 @@ tr {
 
 .jGrowl-message ol,
 .jGrowl-message ul {
-	margin-top: 10px;
-	padding-top: 5px;
+  margin-top: 10px;
+  padding-top: 5px;
 }
 
 .jGrowl-header {
-	margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .dataTables_empty {
@@ -1966,30 +1966,30 @@ textarea,
 select,
 option,
 button {
-	font-family: Verdana, Tahoma, Arial, sans-serif !important;
-	font-size: 12px;
+  font-family: Verdana, Tahoma, Arial, sans-serif !important;
+  font-size: 12px;
 }
 
 span.jQClock {
-	margin-top: -4px !important;
-	font-family: Verdana, Tahoma, Arial, sans-serif;
-	font-size: 12px;
+  margin-top: -4px !important;
+  font-family: Verdana, Tahoma, Arial, sans-serif;
+  font-size: 12px;
 }
 
 .generic-actions button {
-	display: block !important;
-	float: right !important;
-	width: 140px;
-	margin-left: 5px;
+  display: block !important;
+  float: right !important;
+  width: 140px;
+  margin-left: 5px;
 }
 
 .jGrowl-notification, .jGrowl-closer {
-	-moz-box-shadow: -0.2em -0.2em 0.7em #222;
-	-webkit-box-shadow: -0.2em -0.2em 0.7em #222;
+  -moz-box-shadow: -0.2em -0.2em 0.7em #222;
+  -webkit-box-shadow: -0.2em -0.2em 0.7em #222;
 }
 
 .sidetab-switch ul li a.current {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .content video, .content img, div.video, div.image {
@@ -2009,7 +2009,7 @@ span.jQClock {
 }
 
 div.videoThumb {
-	background: #000;
+  background: #000;
     height: 90%;
     overflow: hidden;
     width: 99%;
@@ -2020,33 +2020,33 @@ div.videoThumb {
 }
 
 video {
-	height: 100%;
-	width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .content video, .content img {
-	border: 2px solid #000000;
-	display: block;
+  border: 2px solid #000000;
+  display: block;
 }
 
 .extendedInfo {
-	display: none;
+  display: none;
 }
 
 tfoot input {
-	width: 90%;
+  width: 90%;
 }
 
 input:disabled {
-	background: #EAEAEA;
+  background: #EAEAEA;
 }
 
 button.exportAsPrint, button.exportAsCSV {
-	width: 100px;
+  width: 100px;
 }
 
 .o2k7SkinSilver {
-	box-sizing: border-box !important;
+  box-sizing: border-box !important;
     -moz-box-sizing: border-box !important;
     -webkit-box-sizing: border-box !important;
     float: left !important;

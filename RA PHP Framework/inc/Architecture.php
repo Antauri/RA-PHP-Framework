@@ -22,23 +22,23 @@
  * @version $Id: Architecture.php 52 2012-11-07 12:51:58Z root $
  */
 final class Architecture {
-	/**
-	 * Stores if we're on Windows or not;
-	 *
-	 * @author Catalin Alexandru Zamfir <catalin.zamfir@raphpframework.ro>
-	 * @copyright Under the terms of the GNU General Public License v3
-	 * @version $Id: Architecture.php 52 2012-11-07 12:51:58Z root $
-	 */
-	private static $objSecretIvc = NULL;
+  /**
+   * Stores if we're on Windows or not;
+   *
+   * @author Catalin Alexandru Zamfir <catalin.zamfir@raphpframework.ro>
+   * @copyright Under the terms of the GNU General Public License v3
+   * @version $Id: Architecture.php 52 2012-11-07 12:51:58Z root $
+   */
+  private static $objSecretIvc = NULL;
 
-	/**
-	 * Stores if we're on Windows or not;
-	 *
-	 * @author Catalin Alexandru Zamfir <catalin.zamfir@raphpframework.ro>
-	 * @copyright Under the terms of the GNU General Public License v3
-	 * @version $Id: Architecture.php 52 2012-11-07 12:51:58Z root $
-	 */
-	private static $objSecretKey = NULL;
+  /**
+   * Stores if we're on Windows or not;
+   *
+   * @author Catalin Alexandru Zamfir <catalin.zamfir@raphpframework.ro>
+   * @copyright Under the terms of the GNU General Public License v3
+   * @version $Id: Architecture.php 52 2012-11-07 12:51:58Z root $
+   */
+  private static $objSecretKey = NULL;
 
     /**
      * Stores if we're on Windows or not;
@@ -181,8 +181,8 @@ final class Architecture {
      * @version $Id: Architecture.php 52 2012-11-07 12:51:58Z root $
      */
     public static final function getSecretKey () {
-    	// Return
-    	return self::$objSecretKey;
+      // Return
+      return self::$objSecretKey;
     }
 
     /**
@@ -193,8 +193,8 @@ final class Architecture {
      * @version $Id: Architecture.php 52 2012-11-07 12:51:58Z root $
      */
     public static final function setSecretKey (S $objSecretKey) {
-    	// Set
-    	self::$objSecretKey = $objSecretKey;
+      // Set
+      self::$objSecretKey = $objSecretKey;
     }
 
     /**
@@ -205,8 +205,8 @@ final class Architecture {
      * @version $Id: Architecture.php 52 2012-11-07 12:51:58Z root $
      */
     public static final function getSecretIvc () {
-    	// Return
-    	return self::$objSecretIvc;
+      // Return
+      return self::$objSecretIvc;
     }
 
     /**
@@ -217,8 +217,8 @@ final class Architecture {
      * @version $Id: Architecture.php 52 2012-11-07 12:51:58Z root $
      */
     public static final function setSecretIvc (S $objSecretIvc) {
-    	// Set
-    	self::$objSecretIvc = $objSecretIvc;
+      // Set
+      self::$objSecretIvc = $objSecretIvc;
     }
 
     /**
@@ -229,10 +229,10 @@ final class Architecture {
      * @version $Id: Architecture.php 52 2012-11-07 12:51:58Z root $
      */
     public static final function doCrypt (S $objCrypt) {
-    	// Encrypting
-		return new S (base64_encode (mcrypt_encrypt (MCRYPT_RIJNDAEL_128,
-		Architecture::getSecretKey (), $objCrypt, MCRYPT_MODE_CFB,
-		Architecture::getSecretIvc ())));
+      // Encrypting
+    return new S (base64_encode (mcrypt_encrypt (MCRYPT_RIJNDAEL_128,
+    Architecture::getSecretKey (), $objCrypt, MCRYPT_MODE_CFB,
+    Architecture::getSecretIvc ())));
     }
 
     /**
@@ -243,10 +243,10 @@ final class Architecture {
      * @version $Id: Architecture.php 52 2012-11-07 12:51:58Z root $
      */
     public static final function doDecrypt (S $objCrypt) {
-    	// Decrypting
-		return new S (mcrypt_decrypt (MCRYPT_RIJNDAEL_128,
-		Architecture::getSecretKey (), base64_decode ($objCrypt),
-		MCRYPT_MODE_CFB, Architecture::getSecretIvc ()));
+      // Decrypting
+    return new S (mcrypt_decrypt (MCRYPT_RIJNDAEL_128,
+    Architecture::getSecretKey (), base64_decode ($objCrypt),
+    MCRYPT_MODE_CFB, Architecture::getSecretIvc ()));
     }
 
     /**

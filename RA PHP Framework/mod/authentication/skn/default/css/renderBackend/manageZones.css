@@ -3,9 +3,9 @@
 }
 
 #manageZones thead th.actions {
-	display: none;
+  display: none;
 }
 
 #manageZones tbody tr td:last-child {
-	display: none;
+  display: none;
 }
