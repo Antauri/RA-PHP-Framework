@@ -1,0 +1,42 @@
+h1.Texts_widgetItem {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 32px;
+}
+
+article.Texts_widgetItem {
+    width: auto;
+    margin-top: 20px;
+}
+
+div.Texts_widgetItem_Tags {
+    width: 90%;
+	margin-top: 20px;
+	margin-left: auto;
+    margin-right: auto;
+    border-top: 1px dashed #DFDFDF;
+}
+
+div.Texts_widgetItem_Previous_Next_Links {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+div.Texts_widgetItem_Previous_Link,
+div.Texts_widgetItem_Next_Link {
+	text-align: left;
+    width: 45%;
+    float: left;
+}
+
+div.Texts_widgetItem_Next_Link {
+	text-align: right;
+	float: right;
+}

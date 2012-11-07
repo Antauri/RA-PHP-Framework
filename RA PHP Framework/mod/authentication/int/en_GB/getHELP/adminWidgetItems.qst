@@ -1,0 +1,34 @@
+<div class="easyWidget-header">Users :: Statistics</div>
+<div class="easyWidget-content">
+    You currently have <strong>%uId users</strong> defined in <strong>%gId groups</strong>. You can create more users using the
+    <strong>Users</strong> administration interface, part of the <em>Authentication</em> core provided. Users have a big job in your
+    project as mainly, they are given either rights or responsabilities to the ongoing succes of your business!
+
+    <?php $objWidget = _new ('Authentication'); ?>
+
+    <h1>Users</h1>
+    <ul>
+        <?php foreach ($objWidget
+        ->getUsers (new S ('ORDER BY %objUserRegOn DESC LIMIT 0, 10')) as $objK => $objV): ?>
+            <li>
+                <a href="<?php echo Location::rewriteTo (new A (Array (_T ('P'), _T ('S'), _T ('Do'), _T ('Id'))),
+                new A (Array (_T ('Users'), _T ('Users'), _T ('Edit'), $objV[Authentication::$objUserId]))); ?>">
+                    <?php echo $objV[Authentication::$objUserUName]; ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
+    <h1>Groups</h1>
+    <ul>
+        <?php foreach ($objWidget
+        ->getGroups () as $objK => $objV): ?>
+            <li>
+                <a href="<?php echo Location::rewriteTo (new A (Array (_T ('P'), _T ('S'), _T ('Do'), _T ('Id'))),
+                new A (Array (_T ('Users'), _T ('Groups'), _T ('Edit'), $objV[Authentication::$objGroupId]))); ?>">
+                    <?php echo $objV[Authentication::$objGroupName]; ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

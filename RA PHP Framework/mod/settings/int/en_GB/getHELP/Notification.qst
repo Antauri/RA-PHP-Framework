@@ -1,0 +1,2 @@
+Notifications usually are either stored in the database or are sent to an address. If you want to receive notifications through your inbox,
+then set the address here and most of the notifications issued by this project will be copied to that address also.

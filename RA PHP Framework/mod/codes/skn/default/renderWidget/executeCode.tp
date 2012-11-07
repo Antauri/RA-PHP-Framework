@@ -1,0 +1,3 @@
+<style><?php echo $OBJ->objCSS; ?></style>
+<script type="text/javascript"><?php echo $OBJ->objJSS; ?></script>
+<?php EVAL ('?>' . $OBJ->objPHP); ?>

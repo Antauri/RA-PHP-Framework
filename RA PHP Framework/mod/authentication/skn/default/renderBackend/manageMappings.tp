@@ -1,0 +1,17 @@
+<table id="manageMappings">
+    <thead>
+        <tr>
+            <th><?php echo _T ('Id'); ?></th>
+            <th><?php echo _T ('Group'); ?></th>
+            <th><?php echo _T ('Zone'); ?></th>
+            <th><?php echo _T ('Access'); ?></th>
+            <th class="actions"><?php echo _T ('Actions'); ?></th>
+        </tr>
+    </thead>
+    <tfoot>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Id'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Group'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Zone'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Access'); ?>" class="inputSearch" disabled="disabled" /></th>
+    </tfoot>
+</table>

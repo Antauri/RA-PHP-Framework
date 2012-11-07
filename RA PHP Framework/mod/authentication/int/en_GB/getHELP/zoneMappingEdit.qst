@@ -1,0 +1,4 @@
+Here you can change the flag (allowed or denied) for these mappings, which will allow you to give the possibility for your users
+to use parts of your application or restrict access to them. Changes here will take effect imediately, so hope nobody is using a
+feature you edit now! Try to be carefull when you edit permissions as you may make some of your users mad of changes
+and bugs that can appear due to changes on a LIVE project!

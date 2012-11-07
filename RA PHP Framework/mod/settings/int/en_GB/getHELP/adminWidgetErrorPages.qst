@@ -1,0 +1,21 @@
+<div class="easyWidget-header">Error Pages :: Statistics</div>
+<div class="easyWidget-content">
+    You currently have <strong>%uId defined error pages</strong>. These pages are a substitute for those ugly, Apache or IIS error pages
+    that aren't very helpfull for the average user. That's why we give you the chance to edit these "error pages" by editing them
+    through the <em>Settings/Error Pages</em> administration interface. We default to some standard texts, but you can define your own!
+    
+    <?php $objWidget = _new ('Settings'); ?>
+    
+    <h1>Error Pages</h1>
+    <ul>
+        <?php foreach ($objWidget
+        ->getErrorPages (new S ('ORDER BY %objErrorsId DESC LIMIT 0, 10')) as $objK => $objV): ?>
+            <li>
+                <a href="<?php echo Location::rewriteTo (new A (Array (_T ('P'), _T ('S'), _T ('Do'), _T ('Id'))),
+                new A (Array (_T ('Settings'), _T ('Error Pages'), _T ('Edit'), $objV[Settings::$objErrorsId]))); ?>">
+                    <?php echo $objV[Settings::$objErrorsTitle]; ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

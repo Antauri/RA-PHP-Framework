@@ -1,0 +1,189 @@
+CREATE TABLE IF NOT EXISTS `%objCategory` (
+    `%objCategoryId` char(36) NOT NULL,
+    `%objCategoryName` varchar(75) NOT NULL,
+    `%objCategoryURL` varchar(255) NOT NULL,
+    `%objCategoryDate` bigint(20) unsigned NOT NULL,
+    `%objHierarchyLeft` bigint(20) unsigned NOT NULL,
+    `%objHierarchyRight` bigint(20) unsigned NOT NULL,
+        UNIQUE KEY `name` (`%objCategoryName`),
+        UNIQUE KEY `seo` (`%objCategoryURL`),
+        KEY `%objCategoryId` (`%objCategoryId`),
+        KEY `%objCategoryDate` (`%objCategoryDate`),
+        KEY `%objHierarchyLeft` (`%objHierarchyLeft`),
+        KEY `%objHierarchyRight` (`%objHierarchyRight`))
+        ENGINE=InnoDB 
+        DEFAULT CHARSET=utf8;
+
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_insert_%objCategory;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_insert_%objCategory
+BEFORE INSERT ON %objCategory
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objCategoryId = UUID ();
+            SET NEW.%objCategoryDate = UNIX_TIMESTAMP ();
+        END;
+
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_update_%objCategory;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_update_%objCategory
+BEFORE UPDATE ON %objCategory
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objCategoryDate = UNIX_TIMESTAMP ();
+        END;
+                
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TABLE IF NOT EXISTS `%objItem` (
+	`%objItemId` char(36) NOT NULL,
+	`%objItemTitle` varchar(255) NOT NULL,
+	`%objItemTags` longtext NOT NULL,
+	`%objItemUnix` varchar(255),
+	`%objItemLastDueTime` bigint(20) unsigned NOT NULL default '0',
+	`%objItemURL` longtext NOT NULL,
+	`%objItemPublished` bigint(20) unsigned NOT NULL,
+	`%objItemUpdated` bigint(20) unsigned NOT NULL,
+	`%objItemAuthorId` char(36) NOT NULL,
+	`%objItemCategoryId` char(36) NOT NULL,
+  		UNIQUE KEY `title` (`%objItemTitle`),
+  		KEY `%objItemId` (`%objItemId`),
+    	INDEX (%objItemCategoryId, %objItemAuthorId),
+    		FOREIGN KEY (%objItemCategoryId) 
+    		REFERENCES %objCategory(%objCategoryId)
+    		ON UPDATE CASCADE ON DELETE CASCADE,
+    		FOREIGN KEY (%objItemAuthorId)
+    		REFERENCES %objUser(%objUserId)
+    		ON UPDATE CASCADE ON DELETE CASCADE) 
+  		    ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  		    
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_insert_%objItem;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_insert_%objItem
+BEFORE INSERT ON %objItem
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objItemId = UUID ();
+            SET NEW.%objItemUpdated = UNIX_TIMESTAMP ();
+        END;
+
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_update_%objItem;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_update_%objItem
+BEFORE UPDATE ON %objItem
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objItemUpdated = UNIX_TIMESTAMP ();
+        END;         		    
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TABLE IF NOT EXISTS `%objProperty` (
+    `%objPropertyId` char(36) NOT NULL,
+    `%objPropertyAId` char(36) NOT NULL,
+    `%objPropertyKey` varchar(255) NOT NULL,
+    `%objPropertyVar` longtext NOT NULL,
+    `%objPropertyPublished` bigint(20) unsigned NOT NULL,
+    `%objPropertyUpdated` bigint(20) unsigned NOT NULL,
+        KEY `%objPropertyId` (`%objPropertyId`),
+        KEY `%objPropertyAId` (`%objPropertyAId`),
+        KEY `%objPropertyKey` (`%objPropertyKey`),
+        KEY `%objPropertyVar` (`%objPropertyVar`(1000)),
+        KEY `%objPropertyPublished` (`%objPropertyPublished`),
+        KEY `%objPropertyUpdated` (`%objPropertyUpdated`),
+            FOREIGN KEY (%objPropertyAId)
+            REFERENCES %objItem(%objItemId)
+            ON UPDATE CASCADE ON DELETE CASCADE)
+            ENGINE=InnoDB 
+            DEFAULT CHARSET=utf8;
+            
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_insert_%objProperty;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_insert_%objProperty
+BEFORE INSERT ON %objProperty
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objPropertyId = UUID ();
+            SET NEW.%objPropertyUpdated = UNIX_TIMESTAMP ();
+        END;
+
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_update_%objProperty;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_update_%objProperty
+BEFORE UPDATE ON %objProperty
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objPropertyUpdated = UNIX_TIMESTAMP ();
+        END;         
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TABLE IF NOT EXISTS `%objCategoryProperty` (
+    `%objCategoryPropertyId` char(36) NOT NULL,
+    `%objCategoryPropertyCId` char(36) NOT NULL,
+    `%objCategoryPropertyKey` varchar(255) NOT NULL,
+    `%objCategoryPropertyVar` longtext NOT NULL,
+    `%objCategoryPropertyPublished` bigint(20) unsigned NOT NULL,
+    `%objCategoryPropertyUpdated` bigint(20) unsigned NOT NULL,
+        KEY `%objCategoryPropertyId` (`%objCategoryPropertyId`),
+        KEY `%objCategoryPropertyCId` (`%objCategoryPropertyCId`),
+        KEY `%objCategoryPropertyKey` (`%objCategoryPropertyKey`),
+        KEY `%objCategoryPropertyVar` (`%objCategoryPropertyVar`(1000)),
+        KEY `%objCategoryPropertyPublished` (`%objCategoryPropertyPublished`),
+        KEY `%objCategoryPropertyUpdated` (`%objCategoryPropertyUpdated`),
+            FOREIGN KEY (%objCategoryPropertyCId)
+            REFERENCES %objCategory(%objCategoryId)
+            ON UPDATE CASCADE ON DELETE CASCADE)
+            ENGINE=InnoDB 
+            DEFAULT CHARSET=utf8;
+            
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_insert_%objCategoryProperty;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_insert_%objCategoryProperty
+BEFORE INSERT ON %objCategoryProperty
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objCategoryPropertyId = UUID ();
+            SET NEW.%objCategoryPropertyUpdated = UNIX_TIMESTAMP ();
+        END;
+
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_update_%objCategoryProperty;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_update_%objCategoryProperty
+BEFORE UPDATE ON %objCategoryProperty
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objCategoryPropertyUpdated = UNIX_TIMESTAMP ();
+        END;

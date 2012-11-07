@@ -1,0 +1,34 @@
+<div class="easyWidget-header">Crons :: Statistics</div>
+<div class="easyWidget-content">
+    You currently have <strong>%uId crons</strong> defined in <strong>%gId categories</strong>. You can create more crons using the
+    <strong>Crons</strong> administration interface, part of the <em>Crons</em> core provided. Crons make it possibly to execute
+    actions at specific times using crontab entries similar to the already popular <strong>Unix</strong> Crontab format.
+
+    <?php $objWidget = _new ('Crons'); ?>
+
+    <h1>Items</h1>
+    <ul>
+        <?php foreach ($objWidget
+        ->getItems (new S ('ORDER BY %objItemId DESC LIMIT 0, 10')) as $objK => $objV): ?>
+            <li>
+                <a href="<?php echo Location::rewriteTo (new A (Array (_T ('P'), _T ('S'), _T ('Do'), _T ('Id'))),
+                new A (Array (_T ('Crons'), _T ('Crons'), _T ('Edit'), $objV[Crons::$objItemId]))); ?>">
+                    <?php echo $objV[Crons::$objItemTitle]; ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
+    <h1>Categories</h1>
+    <ul>
+        <?php foreach ($objWidget
+        ->getCategories () as $objK => $objV): ?>
+            <li>
+                <a href="<?php echo Location::rewriteTo (new A (Array (_T ('P'), _T ('S'), _T ('Do'), _T ('Id'))),
+                new A (Array (_T ('Crons'), _T ('Categories'), _T ('Edit'), $objV[Crons::$objCategoryId]))); ?>">
+                    <?php echo Hierarchy::mpttRemoveUnique ($objV[Crons::$objCategoryName]); ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

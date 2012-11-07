@@ -1,0 +1,4 @@
+We provide you with a database of countries, but if political factors decide that new countries should be born, than we allow you
+to add those countries here (most unlikely, but who knows). For a country to be accepted you need to provide the ISO code, the
+country name, the ISO3 and country specific code. Countries relate to users, so try to be careful when adding, erasing or editing
+some of them as they have a major importance in your system and how it works!

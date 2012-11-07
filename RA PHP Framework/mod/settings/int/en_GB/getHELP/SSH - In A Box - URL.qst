@@ -1,0 +1,3 @@
+SSH (In A Box) is actually the "Sheel In A Box" (google it) URL that we need to enable a built-in SSH term right in the administrative
+interface of this project. Details on how to install this daemon on Linux are provided on the official page. We don't cover those basics,
+but we required an URL to be filled in order to enable this feature.

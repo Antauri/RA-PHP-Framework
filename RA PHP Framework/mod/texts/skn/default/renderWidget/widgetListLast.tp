@@ -1,0 +1,15 @@
+<div class="<?php echo $OBJ->objWidget; ?>">
+    <ul class="<?php echo $OBJ->objWidget; ?>">
+        <?php foreach ($OBJ->objItem as $objK => $objV): ?>
+            <li class="<?php echo $OBJ->objWidget; ?>"
+            id="<?php echo $OBJ->objWidget; ?>_Id_<?php
+            echo $objV[static::$objItemId]; ?>">
+                <a href="<?php echo Location::staticTo (new A (Array ($OBJ->objParent)),
+                new A (Array (_T ($objV[static::$objItemURL])))); ?>"
+                class="<?php echo $OBJ->objWidget; ?>">
+                    <?php echo $objV[static::$objItemTitle]; ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

@@ -1,0 +1,286 @@
+CREATE TABLE IF NOT EXISTS `%objGroup` (
+	`%objGroupId` char(36) NOT NULL,
+	`%objGroupName` varchar(75) NOT NULL,
+	`%objGroupSEO` varchar(255) NOT NULL,
+	`%objHierarchyLeft` bigint(20) unsigned NOT NULL,
+	`%objHierarchyRight` bigint(20) unsigned NOT NULL,
+	`%objHierarchyDate` bigint(20) unsigned NOT NULL,
+		UNIQUE KEY `%objGroupName` (`%objGroupName`),
+		UNIQUE KEY `%objGroupSEO` (`%objGroupSEO`),
+		KEY `%objGroupId` (`%objGroupId`),
+		KEY `%objHierarchyLeft` (`%objHierarchyLeft`),
+		KEY `%objHierarchyRight` (`%objHierarchyRight`),
+		KEY `%objHierarchyDate` (`%objHierarchyDate`))
+		ENGINE=InnoDB 
+		DEFAULT CHARSET=utf8;
+		
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_insert_%objGroup;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_insert_%objGroup
+BEFORE INSERT ON %objGroup
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objGroupId = UUID ();
+            SET NEW.date = UNIX_TIMESTAMP ();
+        END;
+
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_update_%objGroup;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_update_%objGroup
+BEFORE UPDATE ON %objGroup
+    FOR EACH ROW
+        BEGIN
+            SET NEW.date = UNIX_TIMESTAMP ();
+        END;		
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TABLE IF NOT EXISTS `%objUser` (
+	`%objUserId` char(36) NOT NULL,
+	`%objUserUName` varchar(50) NOT NULL,
+	`%objUserUPass` varchar(75) NOT NULL,
+	`%objUserUNick` varchar(50) NOT NULL,
+	`%objUserEML` varchar(255) NOT NULL,
+	`%objUserPhone` varchar(50) NOT NULL,
+	`%objUserFName` varchar(50) NOT NULL,
+	`%objUserLName` varchar(50) NOT NULL,
+	`%objUserCountry` varchar(3) NOT NULL,
+	`%objUserCity` varchar(75) NOT NULL,
+	`%objUserSignature` tinytext NOT NULL,
+	`%objUserDesc` text NOT NULL,
+	`%objUserYM` varchar(75) NOT NULL,
+	`%objUserMSN` varchar(75) NOT NULL,
+	`%objUserICQ` varchar(75) NOT NULL,
+	`%objUserAOL` varchar(75) NOT NULL,
+	`%objUserUGId` char(36) NOT NULL,
+	`%objUserRegOn` bigint(20) unsigned NOT NULL,
+	`%objUserLastLog` bigint(20) unsigned NOT NULL,
+	`%objUserActivated` enum('Y','N') NOT NULL,
+	`%objUserHash` varchar(255) NOT NULL,
+	`%objUserAvatar` varchar(255) NOT NULL,
+    `%objUserCredit` double unsigned NOT NULL,
+	`%objUserIp` varchar(255) NOT NULL,
+  		UNIQUE KEY `%objUserUName` (`%objUserUName`),
+  		UNIQUE KEY `%objUserEML` (`%objUserEML`),
+  		KEY `%objUserId` (`%objUserId`),
+  		KEY `%objUserUNick` (`%objUserUNick`),
+  		KEY `%objUserPhone` (`%objUserPhone`),
+  		KEY `%objUserFName` (`%objUserFName`),
+  		KEY `%objUserLName` (`%objUserLName`),
+  		KEY `%objUserCountry` (`%objUserCountry`),
+  		KEY `%objUserCity` (`%objUserCity`),
+  		KEY `%objUserYM` (`%objUserYM`),
+  		KEY `%objUserMSN` (`%objUserMSN`),
+  		KEY `%objUserICQ` (`%objUserICQ`),
+  		KEY `%objUserAOL` (`%objUserAOL`),
+  		KEY `%objUserRegOn` (`%objUserRegOn`),
+  		KEY `%objUserLastLog` (`%objUserLastLog`),
+  		KEY `%objUserHash` (`%objUserHash`),
+  		KEY `%objUserAvatar` (`%objUserAvatar`),
+  		KEY `%objUserCredit` (`%objUserCredit`),
+  		KEY `%objUserIp` (`%objUserIp`),
+  		INDEX (%objUserUGId),
+			FOREIGN KEY (%objUserUGId)
+			REFERENCES %objGroup(%objGroupId)
+			ON UPDATE CASCADE ON DELETE CASCADE)
+  		    ENGINE=InnoDB 
+  		    DEFAULT CHARSET=utf8;
+  		    
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_insert_%objUser;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_insert_%objUser
+BEFORE INSERT ON %objUser
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objUserId = UUID ();
+        END;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TABLE IF NOT EXISTS `%objZone` (
+	`%objZoneId` char(36) NOT NULL,
+	`%objZoneName` varchar(255) NOT NULL,
+	`%objZoneDesc` longtext NOT NULL,
+	`%objZonePrice` varchar(25) NOT NULL,
+	`seo` varchar(255) NOT NULL,
+	`%objHierarchyLeft` bigint(20) unsigned NOT NULL,
+	`%objHierarchyRight` bigint(20) unsigned NOT NULL,
+	`%objHierarchyDate` bigint(20) unsigned NOT NULL,
+  		UNIQUE KEY `%objZoneName` (`%objZoneName`),
+  		KEY `%objZoneId` (`%objZoneId`),
+  		KEY `%objZonePrice` (`%objZonePrice`),
+  		KEY `%objHierarchyLeft` (`%objHierarchyLeft`),
+        KEY `%objHierarchyRight` (`%objHierarchyRight`),
+        KEY `%objHierarchyDate` (`%objHierarchyDate`))
+  		ENGINE=InnoDB 
+  		DEFAULT CHARSET=utf8;
+  		
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_insert_%objZone;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_insert_%objZone
+BEFORE INSERT ON %objZone
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objZoneId = UUID ();
+            SET NEW.date = UNIX_TIMESTAMP ();
+        END;
+
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_update_%objZone;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_update_%objZone
+BEFORE UPDATE ON %objZone
+    FOR EACH ROW
+        BEGIN
+            SET NEW.date = UNIX_TIMESTAMP ();
+        END;          		
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TABLE IF NOT EXISTS `%objMapping` (
+	`%objMappingId` char(36) NOT NULL,
+	`%objMappingZId` char(36) NOT NULL,
+	`%objMappingUGId` char(36) NOT NULL,
+	`%objMappingIUG` enum('Y','N') NOT NULL,
+	`%objMappingAorD` enum('D','A') NOT NULL,
+	`%objMappingErase` enum('Y','N') NOT NULL,
+  		KEY `%objMappingId` (`%objMappingId`),
+  		KEY `%objMappingZId` (`%objMappingZId`),
+  		KEY `%objMappingUGId` (`%objMappingUGId`),
+  		KEY `%objMappingIUG` (`%objMappingIUG`),
+  		KEY `%objMappingAorD` (`%objMappingAorD`),
+  		KEY `%objMappingErase` (`%objMappingErase`),
+			FOREIGN KEY (%objMappingZId)
+			REFERENCES %objZone(%objZoneId)
+			ON UPDATE CASCADE ON DELETE CASCADE)
+  		    ENGINE=InnoDB 
+  		    DEFAULT CHARSET=utf8;
+  		    
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_insert_%objMapping;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_insert_%objMapping
+BEFORE INSERT ON %objMapping
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objMappingId = UUID ();
+        END;  		    
+
+ ___RA_SCHEMA_HASH_TAG_
+
+CREATE TABLE IF NOT EXISTS `%objProperty` (
+    `%objPropertyId` char(36) NOT NULL,
+    `%objPropertyAId` char(36) NOT NULL,
+    `%objPropertyKey` varchar(255) NOT NULL,
+    `%objPropertyVar` longtext NOT NULL,
+    `%objPropertyPublished` bigint(20) unsigned NOT NULL,
+    `%objPropertyUpdated` bigint(20) unsigned NOT NULL,
+        KEY `%objPropertyId` (`%objPropertyId`),
+        KEY `%objPropertyAId` (`%objPropertyAId`),
+        KEY `%objPropertyKey` (`%objPropertyKey`),
+        KEY `%objPropertyVar` (`%objPropertyVar`(1000)),
+        KEY `%objPropertyPublished` (`%objPropertyPublished`),
+        KEY `%objPropertyUpdated` (`%objPropertyUpdated`),
+            FOREIGN KEY (%objPropertyAId)
+            REFERENCES %objUser(%objUserId)
+            ON UPDATE CASCADE ON DELETE CASCADE)
+            ENGINE=InnoDB 
+            DEFAULT CHARSET=utf8;
+            
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_insert_%objProperty;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_insert_%objProperty
+BEFORE INSERT ON %objProperty
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objPropertyId = UUID ();
+            SET NEW.%objPropertyUpdated = UNIX_TIMESTAMP ();
+        END;
+
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_update_%objProperty;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_update_%objProperty
+BEFORE UPDATE ON %objProperty
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objPropertyUpdated = UNIX_TIMESTAMP ();
+        END;
+
+ ___RA_SCHEMA_HASH_TAG_
+
+CREATE TABLE IF NOT EXISTS `%objGroupProperty` (
+	`%objGroupPropertyId` char(36) NOT NULL,
+	`%objGroupPropertyGId` char(36) NOT NULL,
+	`%objGroupPropertyKey` varchar(255) NOT NULL,
+	`%objGroupPropertyVar` longtext NOT NULL,
+	`%objGroupPropertyPublished` bigint(20) unsigned NOT NULL,
+    `%objGroupPropertyUpdated` bigint(20) unsigned NOT NULL,
+		KEY `%objGroupPropertyId` (`%objGroupPropertyId`),
+		KEY `%objGroupPropertyGId` (`%objGroupPropertyGId`),
+		KEY `%objGroupPropertyKey` (`%objGroupPropertyKey`),
+		KEY `%objGroupPropertyVar` (`%objGroupPropertyVar`(1000)),
+		KEY `%objGroupPropertyPublished` (`%objGroupPropertyPublished`),
+		KEY `%objGroupPropertyUpdated` (`%objGroupPropertyUpdated`),
+		INDEX (%objGroupPropertyGId),
+    		FOREIGN KEY (%objGroupPropertyGId)
+    		REFERENCES %objGroup(%objGroupId)
+    		ON UPDATE CASCADE ON DELETE CASCADE)
+    		ENGINE=InnoDB 
+    		DEFAULT CHARSET=utf8;
+
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_insert_%objGroupProperty;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_insert_%objGroupProperty
+BEFORE INSERT ON %objGroupProperty
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objGroupPropertyId = UUID ();
+            SET NEW.%objGroupPropertyUpdated = UNIX_TIMESTAMP ();
+        END;
+
+___RA_SCHEMA_HASH_TAG_
+
+DROP TRIGGER IF EXISTS before_update_%objGroupProperty;
+
+___RA_SCHEMA_HASH_TAG_
+
+CREATE TRIGGER before_update_%objGroupProperty
+BEFORE UPDATE ON %objGroupProperty
+    FOR EACH ROW
+        BEGIN
+            SET NEW.%objGroupPropertyUpdated = UNIX_TIMESTAMP ();
+        END;

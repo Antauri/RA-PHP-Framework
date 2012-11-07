@@ -1,0 +1,3 @@
+Crons are actions that are going to be performed at requested times. The format in which you enter a cron is the standard Unix Crontab
+Format for which documentation is freely available on the Internet. To have a cron execute, enter the required fields in the form below
+and wait, while the cron thread executes and processes your crons.

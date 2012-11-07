@@ -1,0 +1,3 @@
+Different items are organized in different categories. This allows for them to placed on a hierarchy and order be maintained. Before even
+defining your first item you should already have at least one, two categories in a hierarchy to organize the items you're going to define,
+thus, in future developments of your application it's going to be easy for you to find an item based on it's category or hierarcy.

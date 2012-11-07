@@ -1,0 +1,12 @@
+In the context of your application you're going to have a lots of texts. These have a purpose, a meaning and are really tightly bond to
+the underlying PHP code. They make up an easy configurable way to add dynamic content to your application, but keeping it easy and even
+understandable to the more tech-savvy users if they don't need fancy features.
+<ol>
+    <li>Tags: separated by comma, usually with a space after each comma;</li>
+    <li>Author: choose from the list of authors (users) defined as registered users with your application;</li>
+    <li>Category: from categories defined on the 'Categories' tab;</li>
+    <li>Comment: choose if you allow comments or not;</li>
+    <li>Compile: If given PHP code in the content of the text, it will run it!</li>
+    <li>Title: a descriptive title;</li>
+    <li>Content: an WYSIWYG editable textarea, where you can edit text, images, flash and other type of rich-media!</li>
+</ol>

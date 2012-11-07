@@ -1,0 +1,16 @@
+<div id="dragDropConfirmationDialog">
+    <?php echo _T ('You have dragged an item over another. This means that you wanted to move an item in relation to another. What kind
+    of relation does the item you moved want to have in relation with the one you have moved over?
+    If you wish to abort, just close this dialog!'); ?>
+</div>
+<table id="manageGroups">
+    <thead>
+        <tr>
+            <th><?php echo _T ('Depth'); ?></th>
+            <th><?php echo _T ('Left'); ?></th>
+            <th><?php echo _T ('Id'); ?></th>
+            <th><?php echo _T ('Group'); ?></th>
+            <th class="actions"><?php echo _T ('Actions'); ?></th>
+        </tr>
+    </thead>
+</table>

@@ -1,0 +1,275 @@
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,700);
+
+/* Style */
+HTML {
+    overflow-y: scroll;
+}
+
+*, *:focus, *:active {
+    outline: none !important;
+}
+
+* {
+	margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 12px;
+    font-family: Verdana, Tahoma, Arial, sans-serif;
+    vertical-align: baseline;
+}
+
+::-moz-focus-inner {
+    outline: none;
+    border: 0px;
+}
+
+.div_Hidden {
+    display: none;
+}
+
+.Invisible {
+    height: 0px;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 0px;
+}
+
+.div_CLEAR {
+    clear: both;
+}
+
+body {
+	background: URL('../img/others/background.png');
+}
+
+UL {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+UL LI {
+	list-style-type: square;
+}
+
+P {
+	margin: 6px;
+}
+
+.Main {
+	background: rgba(255,255,255,1);
+	box-shadow: 0px 0px 35px rgba(0, 0, 0, 1);
+	border-top: 5px solid #B5DA69;
+	padding: 30px;
+	width: 890px;
+	margin-left: auto;
+	margin-right: 0px;
+	margin-top: 50px;
+	float: left;
+}
+
+.Container {
+	width: 1005px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#showCase {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 15px rgba(25, 25, 25, 0.5);
+}
+
+#showCase img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+
+#showCase a {
+    border: 0;
+    display: block;
+}
+
+a {
+    color: #ae432e;
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #036;
+    text-decoration: underline;
+}
+
+a:hover, a:active {
+    outline: none;
+}
+
+article {
+	width: 78%;
+	float: left;
+	text-shadow: #AAAAAA 6px 6px 6px;
+}
+
+aside {
+	width: 20%;
+	float: right;
+	text-shadow: #AAAAAA 6px 6px 6px;
+}
+
+aside H2 {
+	text-align: right;
+	font-size: 32px;
+	font-weight: normal;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.Main_Phone {
+	font-size: 32px;
+	text-align: left;
+	margin-top: -43px;
+	margin-left: -20px;
+	color: #FFFFFF;
+	font-family: 'Ubuntu', sans-serif;
+    text-shadow: #000000 10px 10px 6px;
+}
+
+#h6_Logo {
+	font-size: 48px;
+	margin-top: -80px;
+	margin-left: 20px;
+    text-align: right;
+    font-weight: normal;
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: #000000 10px 10px 6px;	
+}
+
+#a_Logo {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+#div_Motto {
+	font-size: 72px;
+	font-family: 'Crimson Text', Verdana, sans-serif;
+	text-align: center;
+	margin-top: 60px;
+	border-bottom: 1px solid #FAFAFA;
+	line-height: 48px;
+	margin-bottom: 100px;
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#div_Motto strong {
+   font-weight: 700;
+   font-size: 72px;
+   font-family: 'Crimson Text', Verdana, sans-serif;
+   line-height: 48px;
+}
+
+#div_Motto_Excerpt {
+	font-size: 72px;
+    font-family: 'Crimson Text', Verdana, sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #FAFAFA;
+    line-height: 48px;
+    margin-bottom: 60px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#div_Motto_Excerpt strong {
+    font-weight: 700;
+    font-size: 72px;
+    font-family: 'Crimson Text', Verdana, sans-serif;
+    line-height: 48px;
+}
+
+.Footer {
+	padding: 30px;
+	background: rgba(34, 34, 34, 0.8);
+	box-shadow: 0px 0px 35px rgba(0, 0, 0, 1);
+	border-top: 0px;
+	border-bottom: 5px solid #B5DA69;
+	text-align: right;
+	width: 890px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: #FFFFFF;
+    font-size: 10px;
+    float: left;
+}
+
+.Footer a {
+	color: #FFFFFF;
+	font-size: 10px;
+}
+
+.Footer a:hover {
+    text-decoration: none;
+}
+
+.div_GOne {
+	margin-left: 35px;
+	width: 50px;
+	float: left;
+}
+
+.div_FOne {
+	margin-left: 6px;
+	width: 50px;
+	float: left;
+}
+
+#a_PromoOnTheSide {
+	margin-top: 50px;
+	display: block;
+	float: right;
+	width: 51px;
+	height: 681px;
+}
+
+#img_ProgramBackgroundBox {
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+}
+
+#a_PromoOnHeader {
+	margin-top: 50px;
+	display: block;
+	width: 700px;
+	height: 256px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1.h1_Error {
+	width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 32px;
+    border-bottom: 2px solid #000000;
+}

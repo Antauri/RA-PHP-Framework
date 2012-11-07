@@ -1,0 +1,11 @@
+<table id="manageZones">
+    <thead>
+        <tr>
+            <th><?php echo _T ('Depth'); ?></th>
+            <th><?php echo _T ('Left'); ?></th>
+            <th><?php echo _T ('Id'); ?></th>
+            <th><?php echo _T ('Zone'); ?></th>
+            <th class="actions"><?php echo _T ('Actions'); ?></th>
+        </tr>
+    </thead>
+</table>

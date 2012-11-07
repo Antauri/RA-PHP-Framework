@@ -1,0 +1,61 @@
+<?php $objWidgetCounter = 0; ?>
+    <div class="easyWidget-column"
+    id="easyWidget-column-1">
+        <?php foreach ($OBJ->objWidgets as $objK => $objV): ?>
+            <?php if ($objK % 3 == 0): ?>
+            <div class="easyWidget movable collapsable" 
+            id="theWidget-<?php echo $objWidgetCounter; ?>">
+                <?php
+                // Check
+                if ($objV['wEVAL']->toBoolean () == TRUE) { ?>
+                   <?php Execution
+                   ::executeStoredCode ($objV['wtext']); ?>
+                <?php } else { ?>
+                   <?php ECHO ($objV['wtext']); ?>
+                <?php } ?>
+            </div>
+            <?php endif; ?>
+            <?php $objWidgetCounter++; ?>
+        <?php endforeach; ?>
+    </div>
+    
+    <div class="easyWidget-column"
+    id="easyWidget-column-2">
+        <?php foreach ($OBJ->objWidgets as $objK => $objV): ?>
+            <?php if ($objK % 3 == 1): ?>
+            <div class="easyWidget movable collapsable" 
+            id="theWidget-<?php echo $objWidgetCounter; ?>">
+                <?php
+                // Check
+                if ($objV['wEVAL']->toBoolean () == TRUE) { ?>
+                   <?php Execution
+                   ::executeStoredCode ($objV['wtext']); ?>
+                <?php } else { ?>
+                   <?php ECHO ($objV['wtext']); ?>
+                <?php } ?>
+            </div>
+            <?php endif; ?>
+            <?php $objWidgetCounter++; ?>
+        <?php endforeach; ?>
+    </div>
+    
+    <div class="easyWidget-column"
+    id="easyWidget-column-3">
+        <?php foreach ($OBJ->objWidgets as $objK => $objV): ?>
+            <?php if ($objK % 3 == 2): ?>
+            <div class="easyWidget movable collapsable" 
+            id="theWidget-<?php echo $objWidgetCounter; ?>">
+                <?php
+                // Check
+                if ($objV['wEVAL']->toBoolean () == TRUE) { ?>
+                   <?php Execution
+                   ::executeStoredCode ($objV['wtext']); ?>
+                <?php } else { ?>
+                   <?php ECHO ($objV['wtext']); ?>
+                <?php } ?>
+            </div>
+            <?php endif; ?>
+            <?php $objWidgetCounter++; ?>
+        <?php endforeach; ?>
+    </div>
+    <div style="div_CLEAR"></div>

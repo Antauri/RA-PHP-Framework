@@ -1,0 +1,5 @@
+<div class="div_CLEAR"></div></form>
+<?php if (!empty ($fieldset)): ?>
+    <div class="div_CLEAR"></div>
+    </fieldset>
+<?php endif; ?>

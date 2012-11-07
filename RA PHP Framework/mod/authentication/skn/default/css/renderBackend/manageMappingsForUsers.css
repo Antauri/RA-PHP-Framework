@@ -1,0 +1,7 @@
+#manageMappingsForUsers thead th.actions {
+    display: none;
+}
+
+#manageMappingsForUsers tbody tr td:last-child {
+    display: none;
+}

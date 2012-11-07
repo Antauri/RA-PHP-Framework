@@ -1,0 +1,7 @@
+#manageAttachments thead th.actions {
+    display: none;
+}
+
+#manageAttachments tbody tr td:last-child {
+    display: none;
+}

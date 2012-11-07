@@ -1,0 +1,3 @@
+Although when creating a group we give you the possibility to set the type of relationship with another group, when editing the respective group we
+allow you only to change the name of that group, which must be unique through your whole project. If you need to make changes to the hierarchy of
+your groups, you can drag & drop a group over another in the listings.

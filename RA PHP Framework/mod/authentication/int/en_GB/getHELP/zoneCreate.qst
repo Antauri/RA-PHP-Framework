@@ -1,0 +1,7 @@
+Zones define areas that are restricted to be accessed only by users of a specific group (that were previously given access) or by users
+having predefined mappings for the current zone. Although, many of the zones defined here are added automatically from executing PHP
+code, by your developers and administrator with proper knowledge can use this form to add more zones to your application, instead of
+mapping them inside PHP code. Usually, this part of the application comes with a documentation that lists and documents each and
+every aspect of these zones. Most of the defaults zones you probably see here are zones that limit access to the administration interface
+and have no working role outside this interface. This does not mean you're limited. You can define your own zones, but without needed
+PHP coding to make use of those zones, most of the zones you define here are useless.

@@ -1,0 +1,7 @@
+#manageAudios thead th.actions {
+    display: none;
+}
+
+#manageAudios tbody tr td:last-child {
+    display: none;
+}

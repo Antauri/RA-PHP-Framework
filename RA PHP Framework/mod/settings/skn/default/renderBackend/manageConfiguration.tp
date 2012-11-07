@@ -1,0 +1,31 @@
+<div class="sidetabs">
+    <nav class="sidetab-switch">
+        <ul>
+            <li><a class="default-sidetab" href="#s01"><?php echo _T ('Administration Title'); ?></a></li>
+            <li><a href="#s02"><?php echo _T ('Website Title'); ?></a></li>
+            <li><a href="#s03"><?php echo _T ('Notification address'); ?></a></li>
+            <li><a href="#s04"><?php echo _T ('Date Format'); ?></a></li>
+            <li><a href="#s05"><?php echo _T ('Have A Mint URL'); ?></a></li>
+            <li><a href="#s06"><?php echo _T ('Yahoo WT Key'); ?></a></li>
+            <li><a href="#s07"><?php echo _T ('Google WT Key'); ?></a></li>
+            <li><a href="#s08"><?php echo _T ('Bing WT Key'); ?></a></li>
+            <li><a href="#s09"><?php echo _T ('GeCAD Key'); ?></a></li>
+            <li><a href="#s10"><?php echo _T ('GeCAD Merchant'); ?></a></li>
+            <li><a href="#s11"><?php echo _T ('GeCAD CryptKey'); ?></a></li>
+            <li><a href="#s12"><?php echo _T ('SSH (In A Box) URL'); ?></a></li>
+        </ul>
+    </nav>
+
+    <div class="sidetab default-sidetab" id="s01"><?php $OBJ->renderForm (new S ('Administration.Title')); ?></div>
+    <div class="sidetab" id="s02"><?php $OBJ->renderForm (new S ('Application.Title')); ?></div>
+    <div class="sidetab" id="s03"><?php $OBJ->renderForm (new S ('Notification')); ?></div>
+    <div class="sidetab" id="s04"><?php $OBJ->renderForm (new S ('Default.Date.Format')); ?></div>
+    <div class="sidetab" id="s05"><?php $OBJ->renderForm (new S ('Have.A.Mint')); ?></div>
+    <div class="sidetab" id="s06"><?php $OBJ->renderForm (new S ('Yahoo.WT.Key')); ?></div>
+    <div class="sidetab" id="s07"><?php $OBJ->renderForm (new S ('Google.WT.Key')); ?></div>
+    <div class="sidetab" id="s08"><?php $OBJ->renderForm (new S ('Bing.WT.Key')); ?></div>
+    <div class="sidetab" id="s09"><?php $OBJ->renderForm (new S ('GeCAD.Key')); ?></div>
+    <div class="sidetab" id="s10"><?php $OBJ->renderForm (new S ('GeCAD.Merchant')); ?></div>
+    <div class="sidetab" id="s11"><?php $OBJ->renderForm (new S ('GeCAD.CryptKey')); ?></div>
+    <div class="sidetab" id="s12"><?php $OBJ->renderForm (new S ('SSH - In A Box - URL')); ?></div>
+</div>

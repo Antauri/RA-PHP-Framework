@@ -1,0 +1,7 @@
+#manageGroupProperties thead th.actions {
+    display: none;
+}
+
+#manageGroupProperties tbody tr td:last-child {
+    display: none;
+}

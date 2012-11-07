@@ -1,0 +1,65 @@
+<div class="<?php echo $OBJ->objWidget; ?>">
+    <h1 id="<?php echo $OBJ->objWidget; ?>_Id_<?php
+    echo $OBJ->getItemByURL ($_GET
+    ->offsetGet (_T ('Item')),
+    static::$objItemId); ?>"
+    class="<?php echo $OBJ->objWidget; ?>">
+        <?php echo $OBJ->getItemByURL ($_GET
+        ->offsetGet (_T ('Item')),
+        static::$objItemTitle); ?>
+    </h1>
+    <article id="<?php echo $OBJ->objWidget; ?>_Id_<?php
+    echo $OBJ->getItemByURL ($_GET
+    ->offsetGet (_T ('Item')),
+    static::$objItemId); ?>"
+    class="<?php echo $OBJ->objWidget; ?>">
+        <?php echo $OBJ->getItemByURL ($_GET
+        ->offsetGet (_T ('Item')),
+        static::$objItemContent); ?>
+    </article>
+    <div class="div_CLEAR"></div>
+    <div class="<?php echo $OBJ->objWidget; ?>_Previous_Next_Links">
+        <div class="<?php echo $OBJ->objWidget; ?>_Previous_Link">
+            <?php if ($OBJ
+            ->getPreviousItemByURL ($_GET->offsetGet (_T ('Item')), 
+            static::$objItemTitle) instanceof S): ?>
+                &laquo; <a href="<?php echo Location::staticTo (new A (Array ($OBJ->objParent)),
+                new A (Array (_T ($OBJ->getPreviousItemByURL ($_GET->offsetGet (_T ('Item')), 
+                static::$objItemURL))))); ?>" class="<?php echo $OBJ->objWidget; ?>"
+                title="<?php echo $OBJ
+                ->getPreviousItemByURL ($_GET->offsetGet (_T ('Item')), 
+                static::$objItemTitle); ?>">
+                    <?php echo $OBJ
+                    ->getPreviousItemByURL ($_GET->offsetGet (_T ('Item')), 
+                    static::$objItemTitle); ?>
+                </a>
+            <?php else: ?>
+                &nbsp;
+            <?php endif; ?>
+        </div>
+        <div class="<?php echo $OBJ->objWidget; ?>_Next_Link">
+            <?php if ($OBJ
+            ->getNextItemByURL ($_GET->offsetGet (_T ('Item')), 
+            static::$objItemTitle) instanceof S): ?>
+                <a href="<?php echo Location::staticTo (new A (Array ($OBJ->objParent)),
+                new A (Array (_T ($OBJ->getNextItemByURL ($_GET->offsetGet (_T ('Item')), 
+                static::$objItemURL))))); ?>" class="<?php echo $OBJ->objWidget; ?>"
+                title="<?php echo $OBJ
+                ->getNextItemByURL ($_GET->offsetGet (_T ('Item')), 
+                static::$objItemTitle); ?>">
+                    <?php echo $OBJ
+                    ->getNextItemByURL ($_GET->offsetGet (_T ('Item')), 
+                    static::$objItemTitle); ?>
+                </a> &raquo;
+            <?php else: ?>
+                &nbsp;
+            <?php endif; ?>
+        </div>
+        <div class="div_CLEAR"></div>
+    </div>
+    <div class="div_CLEAR"></div>
+    <div class="<?php echo $OBJ->objWidget; ?>_Tags">
+        <?php echo _T ('Tags: '), $OBJ->getItemByURL ($_GET
+        ->offsetGet (_T ('Item')), static::$objItemTags); ?>
+    </div>
+</div>

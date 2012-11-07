@@ -1,0 +1,11 @@
+#manageZones tbody tr td:first-child {
+    text-align: left;
+}
+
+#manageZones thead th.actions {
+	display: none;
+}
+
+#manageZones tbody tr td:last-child {
+	display: none;
+}

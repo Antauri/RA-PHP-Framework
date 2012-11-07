@@ -1,0 +1,17 @@
+<table id="manageCountries">
+    <thead>
+        <tr>
+            <th><?php echo _T ('Id'); ?></th>
+            <th><?php echo _T ('Country'); ?></th>
+            <th><?php echo _T ('Iso'); ?></th>
+            <th><?php echo _T ('Code'); ?></th>
+            <th class="actions"><?php echo _T ('Actions'); ?></th>
+        </tr>
+    </thead>
+    <tfoot>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Id'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Country'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Iso'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Code'); ?>" class="inputSearch" /></th>
+    </tfoot>
+</table>

@@ -1,0 +1,23 @@
+<?php if (!empty ($fieldset) && !empty ($id)): ?>
+    <fieldset id='RA_Form_Set_<?php echo $id; ?>'>
+        <legend id='RA_Form_Legend_<?php echo $id; ?>'>
+            <?php echo $fieldset; ?>
+        </legend>
+    <?php endif; ?>
+    <?php if (!empty ($name)): ?>
+        <form accept-charset="utf-8"
+        <?php if (!empty ($id)): ?> id='RA_Form_Form_<?php echo $id; ?>'<?php endif; ?>
+        <?php if (!empty ($name)): ?> name='<?php echo $name; ?>'<?php endif; ?>
+        <?php if (!empty ($class)): ?> class='RA_Form_Form_<?php echo $class; ?>'<?php endif; ?>
+        <?php if (!empty ($style)): ?> style='<?php echo $style; ?>'<?php endif; ?>
+        <?php if (!empty ($title)): ?> title='<?php echo $title; ?>'<?php endif; ?>
+        <?php if (!empty ($dir)): ?> dir='<?php echo $dir; ?>'<?php endif; ?>
+        <?php if (!empty ($action)): ?> action='<?php echo $action; ?>'<?php endif; ?>
+        <?php if (!empty ($accept)): ?> accept='<?php echo $accept; ?>'<?php endif; ?>
+        <?php if (!empty ($enctype)): ?> enctype='<?php echo $enctype; ?>'<?php endif; ?>
+        <?php if (!empty ($method)): ?> method='<?php echo $method; ?>'<?php endif; ?>
+        <?php if (!empty ($target)): ?> target='<?php echo $target; ?>'<?php endif; ?>
+        <?php if (!empty ($onsubmit)): ?> onsubmit='<?php echo $onsubmit; ?>'<?php endif; ?>
+        <?php if (!empty ($onreset)): ?> onreset='<?php echo $onreset; ?>'
+    <?php endif; ?>>
+<?php endif; ?>

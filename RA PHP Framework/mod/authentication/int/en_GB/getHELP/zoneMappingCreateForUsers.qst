@@ -1,0 +1,4 @@
+Permissions can be set on a per-group basis. But for some project that's not enough. We give you the possibility to allow permissions on a per-user
+basis. How this is managed is simple: an user, when authenticated would inherit the permissions of the group he's in. After that, specific permissions
+of the user, if they exists, are merged with the ones from the group. The merging gives back the ACL for that user and maps
+access or restrictions of that user to specific features of your project.

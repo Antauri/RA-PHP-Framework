@@ -1,0 +1,6 @@
+If it happens that your users report that their city isn't yet in the database, we allow you to define the city here. This will allow
+the users to properly choose their city from the specified list. To define a new city, some constrains are needed as so:
+<ol>
+	<li>Country: you need to select which country to map the city to;</li>
+	<li>City: you need to enter the city name. This field must not be left blank;</li>
+</ol>

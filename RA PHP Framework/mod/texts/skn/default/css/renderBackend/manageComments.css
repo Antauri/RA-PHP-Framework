@@ -1,0 +1,7 @@
+#manageComments thead th.actions {
+    display: none;
+}
+
+#manageComments tbody tr td:last-child {
+    display: none;
+}

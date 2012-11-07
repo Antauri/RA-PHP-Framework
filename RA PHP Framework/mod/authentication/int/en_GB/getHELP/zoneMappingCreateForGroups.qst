@@ -1,0 +1,4 @@
+Having groups and zones is ok. But without mapping them one with another, there's really no use of their existence. Thus, if you need to
+allow or deny a group access to a specific zone, you can do that here, by mapping that specific group to a specific zone and setting the
+flag it needs (allowed, denied) or any other. Thus, upon accessing a restricted zone, that group's permission will be checked with the
+value you set here. Take great care in what permissions you allow or deny to your groups.

@@ -1,0 +1,7 @@
+#manageVideos thead th.actions {
+    display: none;
+}
+
+#manageVideos tbody tr td:last-child {
+    display: none;
+}

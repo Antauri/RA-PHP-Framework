@@ -1,0 +1,7 @@
+#manageImages thead th.actions {
+    display: none;
+}
+
+#manageImages tbody tr td:last-child {
+    display: none;
+}

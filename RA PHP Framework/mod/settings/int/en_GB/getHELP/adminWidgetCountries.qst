@@ -1,0 +1,22 @@
+<div class="easyWidget-header">Countries :: Statistics</div>
+<div class="easyWidget-content">
+    You currently have <strong>%uId defined countries</strong>. Countries are used in cases as <strong>Users</strong> or other geo-tagging features
+    of your project to allow a geographically distinguished separation between the entities you define. By default, we provide you with them, for free,
+    but we do not guarantee that these are up-to-date. In short, if you need to define a new country or update the list according to political factors,
+    you can do that here.
+    
+    <?php $objWidget = _new ('Settings'); ?>
+    
+    <h1>Countries</h1>
+    <ul>
+        <?php foreach ($objWidget
+        ->getCountries (new S ('ORDER BY %objCountryIso DESC LIMIT 0, 10')) as $objK => $objV): ?>
+            <li>
+                <a href="<?php echo Location::rewriteTo (new A (Array (_T ('P'), _T ('S'), _T ('Do'), _T ('Id'))),
+                new A (Array (_T ('Settings'), _T ('Countries'), _T ('Edit'), $objV[Settings::$objCountryIso]))); ?>">
+                    <?php echo $objV[Settings::$objCountryPrnt]; ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

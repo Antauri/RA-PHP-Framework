@@ -1,0 +1,35 @@
+<div class="easyWidget-header">Texts :: Statistics</div>
+<div class="easyWidget-content">
+    You currently have <strong>%uId texts</strong> defined in <strong>%gId categories</strong>. You can create more texts using the
+    <strong>Texts</strong> administration interface, part of the <em>Texts</em> core provided. Texts provide a way to manage so-called
+    "static" content in your project, that can be invoked pretty much anywhere. It's called "static" because "texts" as a concept
+    can refer to raw HTML data, but even to Javascript or executing PHP code if the properties of the text allow it!
+
+    <?php $objWidget = _new ('Texts'); ?>
+
+    <h1>Items</h1>
+    <ul>
+        <?php foreach ($objWidget
+        ->getItems (new S ('ORDER BY %objItemPublished DESC LIMIT 0, 10')) as $objK => $objV): ?>
+            <li>
+                <a href="<?php echo Location::rewriteTo (new A (Array (_T ('P'), _T ('S'), _T ('Do'), _T ('Id'))),
+                new A (Array (_T ('Texts'), _T ('Texts'), _T ('Edit'), $objV[Texts::$objItemId]))); ?>">
+                    <?php echo $objV[Texts::$objItemTitle]; ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
+    <h1>Categories</h1>
+    <ul>
+        <?php foreach ($objWidget
+        ->getCategories () as $objK => $objV): ?>
+            <li>
+                <a href="<?php echo Location::rewriteTo (new A (Array (_T ('P'), _T ('S'), _T ('Do'), _T ('Id'))),
+                new A (Array (_T ('Texts'), _T ('Categories'), _T ('Edit'), $objV[Texts::$objCategoryId]))); ?>">
+                    <?php echo Hierarchy::mpttRemoveUnique ($objV[Texts::$objCategoryName]); ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

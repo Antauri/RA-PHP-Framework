@@ -1,0 +1,8 @@
+            <div class="div_CLEAR"></div>
+        </div>
+    <div class="div_CLEAR"></div>
+    <div class="Footer">
+        Dezvoltat de <a href="http://kitsoftware.ro" title="Software & Web design & development">KIT Operations</a>. 
+        Toate drepturile rezervate. Generat in: <?php echo $OBJ->objGenerationTime; ?>
+    </div>
+</div>

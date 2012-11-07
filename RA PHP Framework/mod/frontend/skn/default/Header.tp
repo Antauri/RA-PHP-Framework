@@ -1,0 +1,22 @@
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push (['_setAccount', 'UA-24381131-2']);
+  _gaq.push (['_trackPageview']);
+
+  (function () {
+    var ga = document.createElement ('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName ('script')[0]; s.parentNode.insertBefore (ga, s);
+  }) ();
+</script>
+<a id="a_PromoOnHeader" href="http://administram.ro/Texts/Descarca-softul-de-gestiune-pentru-asociatii-de-proprietari-Administramro">
+    <img src="<?php echo $OBJ->objIMG; ?>/others/descarca.png" />
+</a>
+<div class="Container">
+    <a id="a_PromoOnTheSide" href="http://administram.ro/Texts/Program-soft-de-administrare-imobile-lansat-de-Administramro">
+        <img src="<?php echo $OBJ->objIMG; ?>/others/cauti-un-soft-de-gestiune-pentru-asociatia-ta.png" />
+    </a>
+    <div class="Main">
+        <a id="a_Logo" href="<?php Architecture::getHost (); ?>"><h6 id="h6_Logo"><img src="<?php echo 
+        $OBJ->objIMG; ?>/others/logo.png" style="float: right; margin-top: -60px; margin-right: -20px;" />administram.ro</h6></a>
+        <div class="Main_Phone">Suna-ne: 0728.402.129</div>

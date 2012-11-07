@@ -1,0 +1,34 @@
+<div class="easyWidget-header">Codes :: Statistics</div>
+<div class="easyWidget-content">
+    You currently have <strong>%uId codes</strong> defined in <strong>%gId categories</strong>. You can create more codes using the 
+    <strong>Codes</strong> administration interface, part of the <em>Codes</em> core provided. Codes allow dynamic, project-specific
+    PHP/JSS/CSS widgets to be directly programmed into the database and used in various circumstances around your project.
+    
+    <?php $objWidget = _new ('Codes'); ?>
+    
+    <h1>Items</h1>
+    <ul>
+        <?php foreach ($objWidget
+        ->getItems (new S ('ORDER BY %objItemId DESC LIMIT 0, 10')) as $objK => $objV): ?>
+            <li>
+                <a href="<?php echo Location::rewriteTo (new A (Array (_T ('P'), _T ('S'), _T ('Do'), _T ('Id'))),
+                new A (Array (_T ('Codes'), _T ('Codes'), _T ('Edit'), $objV[Codes::$objItemId]))); ?>">
+                    <?php echo $objV[Codes::$objItemTitle]; ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    
+    <h1>Categories</h1>
+    <ul>
+        <?php foreach ($objWidget
+        ->getCategories () as $objK => $objV): ?>
+            <li>
+                <a href="<?php echo Location::rewriteTo (new A (Array (_T ('P'), _T ('S'), _T ('Do'), _T ('Id'))),
+                new A (Array (_T ('Codes'), _T ('Categories'), _T ('Edit'), $objV[Codes::$objCategoryId]))); ?>">
+                    <?php echo Hierarchy::mpttRemoveUnique ($objV[Codes::$objCategoryName]); ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

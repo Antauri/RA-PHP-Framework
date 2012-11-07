@@ -1,0 +1,7 @@
+#manageCategoryProperties thead th.actions {
+    display: none;
+}
+
+#manageCategoryProperties tbody tr td:last-child {
+    display: none;
+}

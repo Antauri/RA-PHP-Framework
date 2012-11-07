@@ -1,0 +1,485 @@
+<?php if (Session::checkKey (new S ('Hide Left'),
+new O ('1'))->toBoolean () == TRUE): ?>
+    <style>
+    body section[role=navigation] {
+        display: none;
+    }
+
+    body section[role=main] {
+        margin-left: 0px;
+    }
+    </style>
+<?php endif; ?>
+    <!-- Aside Block -->
+    <section role="navigation">
+        <!-- Header with logo and headline -->
+        <header>
+            <?php if ($OBJ->getAuthentication ()
+            ->checkIsLoggedIn ()->toBoolean () == TRUE): ?>
+                <a href="<?php echo Architecture::getHost (); ?>/Admin/Go" title="Back to Administration Homepage">
+                    <span>admin</span>CP
+                </a>
+            <?php else: ?>
+                <a href="<?php echo Architecture::getHost (); ?>" title="Back to Homepage">
+                    <span>admin</span>CP
+                </a>
+            <?php endif; ?>
+
+            <h1>for: <?php echo _S (Architecture::getHost ())
+            ->doToken ('http://', _NONE)->doToken ('https://', _NONE)
+            ->doToken ('/', _NONE); ?></h1>
+        </header>
+
+        <!-- User Info -->
+        <?php if ($OBJ->getAuthentication ()
+        ->checkIsLoggedIn ()->toBoolean () == TRUE): ?>
+            <section id="user-info">
+                <img src="<?php echo Location::rewriteTo (new
+                A (Array (_T ('Output'), _T ('Avatar'))), new A (Array ($OBJ->getAuthentication ()
+                ->getCurrentUser (Authentication::$objUserId), _T ('Ok')))); ?>" alt="Avatar" />
+                <div>
+                    <a href="<?php echo 
+                    Architecture::getHost (); ?>/Admin/Go/Do Admin/Log Out" 
+                    title="<?php echo _T ('Click to logout!'); ?>">
+                        <?php echo $OBJ->getAuthentication ()
+                        ->getCurrentUser (Authentication::$objUserUName)->doSubStr (0, 20)
+                        ->appendString (_SP)->appendString (_DTE); ?>
+                    </a>
+                    Group: <em><?php echo $OBJ->getAuthentication ()->getGroupById ($OBJ
+                    ->getAuthentication ()->getCurrentUser (Authentication::$objUserUGId),
+                    Authentication::$objGroupName)->doSubStr (0, 15)
+                    ->appendString (_SP)->appendString (_DTE); ?></em>
+                    <ul>
+                        <li><a class="button-link" href="<?php echo Architecture::getHost (); ?>"
+                        title="<?php echo _T ('Click to see the project index!'); ?>"
+                        rel="tooltip">website</a></li>
+
+                        <li><a class="button-link" href="<?php echo 
+                        Architecture::getHost (); ?>/Admin/Go/Do Admin/Log Out"
+                        title="<?php echo _T ('Click here to logout!'); ?>"
+                        rel="tooltip">logout</a></li>
+                    </ul>
+                </div>
+            </section>
+        <?php endif; ?>
+        <!-- /User Info -->
+
+        <!-- Main Navigation -->
+        <nav id="main-nav">
+            <ul>
+                <!-- Use class .no-submenu to open link instead of a sub menu-->
+                <!-- Use class .current to open submenu on page load -->
+                <?php foreach ($OBJ->objMenu as $objK => $objV): ?>
+                    <li <?php if ($_GET[_T ('P')] == $objK): ?>class="current"<?php endif; ?>>
+                        <?php if ($objK == _T ('Status')) {
+                            // Set
+                            $objC = 'dashboard no-submenu';
+                        } else {
+                            // Set
+                            $objC = 'products';
+                        } ?>
+
+                        <a class="<?php echo $objC; ?>"
+                        href="<?php echo
+                        Architecture::getHost (); ?>/Admin/Go/<?php echo _T ('P') . _WS . $objK; ?>">
+                            <?php echo $objK; ?>
+                        </a>
+
+                        <?php if ($objK != 'Status'): ?>
+                            <ul>
+                                <?php
+                                // Foreach
+                                foreach ($OBJ->objSubmenu[$objK] as $objSK => $objSV): ?>
+                                    <li>
+                                        <a class="<?php if ((isset ($_GET[_T ('S')])) &&
+                                        ($_GET[_T ('S')] == $objSK)): ?>current<?php endif; ?> no-submenu"
+                                        href="<?php echo
+                                        Architecture::getHost (); ?>/Admin/Go/<?php echo Architecture
+                                        ::pathTo (_T ('P'), $objK, _T ('S'), $objSK); ?>">
+                                            <?php echo $objSK; ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </nav>
+        <!-- /Main Navigation -->
+
+        <!-- Sidebar -->
+        <section class="sidebar nested">
+        <!-- Use class .nested for diferent style -->
+            <h2><strong>Keyboard is your friend</strong></h2>
+            <ul>
+                <li><strong>ALT + Shift + S</strong><br /> whenever you want to submit a form, use this shortcut key!</li>
+                <li><strong>ALT + Shift + A</strong><br /> whenever you want to quickly add another entry, whenever you view a list!</li>
+                <li><strong>ALT + Shift + X</strong><br /> where "X" is the unique key, documented in the "?!" button on every form.</li>
+            </ul>
+        </section>
+        <!-- /Sidebar -->
+        
+        <!-- Sidebar -->
+        <section class="sidebar nested">
+        <!-- Use class .nested for diferent style -->
+            <h2><strong>Mouse is your sidekick</strong></h2>
+            <ul>
+                <li>Whenever you want to edit something, just double-click it. This will forward you to the editing form for that 
+                specific item.</li> 
+                <li>In case you want to erase it, wheel-click on the item and it will be erased after confirming the operation.</li>
+            </ul>
+        </section>
+        <!-- /Sidebar -->
+
+        <!-- Sidebar -->
+        <section class="sidebar nested">
+        <!-- Use class .nested for diferent style -->
+            <h2><strong>Quick Info</strong></h2>
+            <ul>
+                <li>Today is: <?php echo date ('M j, Y'); ?></li>
+                <li>IP is: <?php echo Architecture::getUserAgentIp (); ?></li>
+            </ul>
+        </section>
+        <!-- /Sidebar -->
+    </section>
+    <!-- /Aside Block -->
+
+    <!-- Main Content -->
+    <section role="main">
+        <?php if ($OBJ->getAuthentication ()
+        ->checkIsLoggedIn ()->toBoolean () == TRUE): ?>
+            <?php $objNotifications = $OBJ
+            ->getNewestNotifications (); ?>
+
+            <?php foreach ($objNotifications as
+            $objNK => $objNV): ?>
+                <?php
+                    switch ((int) (string) $objNV['type']) {
+                        // Error
+                        case static::NOTIFICATION_TYPE_ERROR:
+                            // Set
+                            $objType = 'error';
+                            break;
+
+                        // Attention
+                        case static::NOTIFICATION_TYPE_ALERT:
+                            // Set
+                            $objType = 'attention';
+                            break;
+
+                        // Message
+                        case static::NOTIFICATION_TYPE_MESSAGE:
+                            // Set
+                            $objType = 'success';
+                            break;
+
+                        // Notify
+                        case static::NOTIFICATION_TYPE_NOTIFY:
+                            // Set
+                            $objType = 'note';
+                            break;
+                    }
+                ?>
+                <div class="notification <?php echo $objType; ?>">
+                    <div class="from">From: <strong><?php echo $objNV['source']; ?></strong></div>
+                    <div class="on">On: <?php echo date ('d/m/Y H:i:s',
+                    (int) (string) $objNV['published']); ?></div>
+                    <div class="msg">
+                        <a href="<?php echo Architecture::getHost (); ?>/Admin/Go/Do Admin/Notification/Id/<?php echo $objNV['id']; ?>"
+                        class="close-notification" data-id="<?php echo $objNV['id']; ?>"></a>
+                        <?php echo $objNV['msg']; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            <?php if ($objNotifications->doCount ()->toInt () % 2 != 0): ?>
+                <div class="notification note">
+                    <div class="from">From: <strong>System</strong></div>
+                    <div class="on">On: <?php echo date ('d/m/Y H:i:s'); ?></div>
+                    <div class="msg">
+                        <a href="#" class="close-notification"></a>
+                        <?php echo _T ('You should pay attention to the messages that appear
+                        in this area, as they are notifications, errors or success messages
+                        that were generated during the execution of crons, updates or other
+                        events happened through your project\'s lifetime!'); ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="div_CLEAR div_Spacer_10px"></div>
+        <?php endif; ?>
+
+        <?php if (!($_GET->offsetExists ('Run'))): ?>
+            <!-- Breadcumbs -->
+            <ul id="breadcrumbs">
+                <li class="toggle">
+                    <a href="<?php echo Location::rewriteTo (new A (Array ('Do Admin')),
+                    new A (Array ('Hide Left'))); ?>">&laquo; Toggle Navigation</a>
+                </li>
+
+                <li class="homepage">
+                    <a href="<?php echo Architecture::pathTo (Architecture::getHost (), new S ('Admin/Go')); ?>"
+                    title="Back to Homepage">Back to Home</a>
+                </li>
+
+                <?php if ($_GET->offsetExists (_T ('P'))): ?>
+                    <li>
+                        <a href="<?php echo
+                        Architecture::getHost (); ?>/Admin/Go/<?php echo _T ('P') . _WS .
+                        $_GET->offsetGet (_T ('P')); ?>">
+                            <!-- Page -->
+                            <?php echo $_GET->offsetGet (_T ('P')); ?>
+                        </a>
+                    </li>
+                <?php endif; ?>
+
+                <?php if ($_GET->offsetExists (_T ('S'))): ?>
+                    <li>
+                        <a href="<?php echo
+                        Architecture::getHost (); ?>/Admin/Go/<?php echo _T ('P') . _WS .
+                        $_GET->offsetGet (_T ('P')) . _WS . _T ('S') . _WS .
+                        $_GET->offsetGet (_T ('S')); ?>">
+                            <!-- Sub Page -->
+                            <?php echo $_GET->offsetGet (_T ('S')); ?>
+                        </a>
+                    </li>
+                <?php endif; ?>
+
+                <?php if ($_GET->offsetExists (_T ('Do'))): ?>
+                    <li>
+                        <?php if ($_GET->offsetGet (_T ('Do')) != _T ('Add')): ?>
+                            <a href="<?php echo
+                            Architecture::getHost (); ?>/Admin/Go/<?php echo _T ('P') . _WS .
+                            $_GET->offsetGet (_T ('P'))  . _WS . _T ('S') . _WS .
+                            $_GET->offsetGet (_T ('S'))  . _WS . _T ('Do') . _WS .
+                            $_GET->offsetGet (_T ('Do')) . _WS . _T ('Id') . _WS .
+                            $_GET->offsetGet (_T ('Id')); ?>">
+                                <!-- Action -->
+                                <?php echo $_GET->offsetGet (_T ('Do')); ?>
+                            </a>
+                        <?php else: ?>
+                            <a href="<?php echo
+                            Architecture::getHost (); ?>/Admin/Go/<?php echo _T ('P') . _WS .
+                            $_GET->offsetGet (_T ('P')) . _WS . _T ('S')  . _WS .
+                            $_GET->offsetGet (_T ('S')) . _WS . _T ('Do') . _WS .
+                            $_GET->offsetGet (_T ('Do')); ?>">
+                                <!-- Action -->
+                                <?php echo $_GET->offsetGet (_T ('Do')); ?>
+                            </a>
+                        <?php endif; ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if ($_GET->offsetExists (_T ('Do'))): ?>
+                    <li>
+                        <?php if ($_GET->offsetGet (_T ('Do')) != _T ('Add')): ?>
+                            <a href="<?php echo Location::rewriteTo (); ?>" id="unique_Item_Breadcrumb_Link">
+                                <!-- Item -->
+                            </a>
+                        <?php else: ?>
+                            <a href="<?php echo Location::rewriteTo (); ?>" id="unique_Item_Breadcrumb_Link_Entry">
+                                New entry
+                            </a>
+                        <?php endif; ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if ($OBJ->getAuthentication ()
+                ->checkIsLoggedIn ()->toBoolean () == FALSE): ?>
+                    <li>
+                        <a href="<?php echo Architecture::pathTo (Architecture::getHost (), new S ('Admin/Go')); ?>" 
+                        title="Authentication">Authentication</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+            <!-- /Breadcumbs -->
+        <?php endif; ?>
+
+        <div class="generic-actions">
+            <?php if ($_GET
+            ->offsetExists (_T ('Do'))): ?>
+                <?php
+                    switch ($_GET->offsetGet (_T ('Do'))) {
+                        case _T ('Properties'): ?>
+
+                            <?php if (!($_GET->offsetExists ('Do Properties'))): ?>
+                                <button accesskey="A" class="add large" href="<?php echo
+                                Location::rewriteTo (new A (Array (_T ('Do Properties'))),
+                                new A (Array (_T ('Add')))); ?>">Add a new property</button>
+                                <button accesskey="E" class="exportAsCSV large" href="#">As CSV</button>
+                                <button accesskey="P" class="exportAsPrint large" href="#">Print</button>
+                            <?php endif; ?>
+
+                            <?php break;
+                        case _T ('Images'): ?>
+
+                            <?php if (!($_GET->offsetExists ('Do Images'))): ?>
+                                <button accesskey="A" class="add large" href="<?php echo
+                                Location::rewriteTo (new A (Array (_T ('Do Images'))),
+                                new A (Array (_T ('Add')))); ?>">Add a new image</button>
+                                <button accesskey="E" class="exportAsCSV large" href="#">As CSV</button>
+                                <button accesskey="P" class="exportAsPrint large" href="#">Print</button>
+                            <?php endif; ?>
+
+                            <?php break;
+                        case _T ('Videos'): ?>
+
+                            <?php if (!($_GET->offsetExists ('Do Videos'))): ?>
+                                <button accesskey="A" class="add large" href="<?php echo
+                                Location::rewriteTo (new A (Array (_T ('Do Videos'))),
+                                new A (Array (_T ('Add')))); ?>">Add a new video</button>
+                                <button accesskey="E" class="exportAsCSV large" href="#">As CSV</button>
+                                <button accesskey="P" class="exportAsPrint large" href="#">Print</button>
+                            <?php endif; ?>
+
+                            <?php break;
+                        case _T ('Comments'): ?>
+
+                            <?php if (!($_GET->offsetExists ('Do Comments'))): ?>
+                                <button accesskey="A" class="add large" href="<?php echo
+                                Location::rewriteTo (new A (Array (_T ('Do Comments'))),
+                                new A (Array (_T ('Add')))); ?>">Add a new comment</button>
+                                <button accesskey="E" class="exportAsCSV large" href="#">As CSV</button>
+                                <button accesskey="P" class="exportAsPrint large" href="#">Print</button>
+                            <?php endif; ?>
+
+                            <?php break;
+                        case _T ('Audios'): ?>
+
+                            <?php if (!($_GET->offsetExists ('Do Audios'))): ?>
+                                <button accesskey="A" class="add large" href="<?php echo
+                                Location::rewriteTo (new A (Array (_T ('Do Audios'))),
+                                new A (Array (_T ('Add')))); ?>">Add a new audio</button>
+                                <button accesskey="E" class="exportAsCSV large" href="#">As CSV</button>
+                                <button accesskey="P" class="exportAsPrint large" href="#">Print</button>
+                            <?php endif; ?>
+                            
+                            <?php break;
+                        case _T ('Attachments'): ?>
+
+                            <?php if (!($_GET->offsetExists ('Do Attachments'))): ?>
+                                <button accesskey="A" class="add large" href="<?php echo
+                                Location::rewriteTo (new A (Array (_T ('Do Attachments'))),
+                                new A (Array (_T ('Add')))); ?>">Add a new attach</button>
+                                <button accesskey="E" class="exportAsCSV large" href="#">As CSV</button>
+                                <button accesskey="P" class="exportAsPrint large" href="#">Print</button>
+                            <?php endif; ?>
+                            <?php break;
+                        
+                    }
+                ?>
+            <?php else: ?>
+                <button accesskey="A" class="add large" href="<?php echo
+                Location::rewriteTo (new A (Array (_T ('Do'))),
+                new A (Array (_T ('Add')))); ?>">Add a new entry</button>
+                <button accesskey="E" class="exportAsCSV large" href="#">As CSV</button>
+                <button accesskey="P" class="exportAsPrint large" href="#">Print</button>
+            <?php endif; ?>
+        </div>
+
+        <!-- Full Content Block -->
+        <!-- Note that only 1st article need clearfix class for clearing -->
+        <article class="full-block clearfix">
+
+            <!-- Article Content -->
+            <section>
+                <?php if ($OBJ->getAuthentication ()
+                ->checkIsLoggedIn ()->toBoolean () == FALSE): ?>
+                    <?php $OBJ->getAuthentication ()
+                    ->renderForm (new S ('adminLoginScreen')); ?>
+                <?php endif; ?>
+
+                <?php if ($OBJ->getAuthentication ()
+                ->checkIsLoggedIn ()->toBoolean () == TRUE): ?>
+                    <?php if (!isset ($_GET[_T ('S')]) && isset ($_GET[_T ('P')]) && !isset ($_GET[_T ('Run')])): ?>
+                        <?php /* Get proper PHP redirection */ ?>
+                        <?php require_once $OBJ->objMenu[$_GET[_T ('P')]]['path']; ?>
+                    <?php endif; ?>
+
+                    <?php if (isset ($_GET[_T ('P')]) && isset ($_GET[_T ('S')])): ?>
+                        <?php /* Get proper PHP redirection */ ?>
+                        <?php require_once $OBJ->objSubmenu[$_GET[_T ('P')]][$_GET[_T ('S')]]['path']; ?>
+                    <?php endif; ?>
+
+                    <?php if (isset ($_GET[_T ('Run')])): ?>
+                        <?php
+                        // Switch
+                        switch ($_GET[_T ('Run')]) {
+                            case 'Top':
+                                ?><article class="half-block"><?php
+                                echo '<pre>########## TOP: </pre>';
+                                echo '<pre>', system ('top -b -n 1'), '</pre>';
+                                ?></article>
+                                <article class="half-block clearrm"><?php
+                                echo '<pre>########## FREE: </pre>';
+                                echo '<pre>', system ('free -m'), '</pre>';
+                                echo '<pre>########## DF: </pre>';
+                                echo '<pre>', system ('df -h'), '</pre>';
+                                echo '<pre>########## UNAME: </pre>';
+                                echo '<pre>', system ('uname -r'), '</pre>';
+                                echo '<pre>########## UPTIME: </pre>';
+                                echo '<pre>', system ('uptime'), '</pre>';
+                                ?></article><?php
+                                break;
+                        } ?>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </section>
+            <!-- /Article Content -->
+            
+            <?php if ($OBJ->getAuthentication ()
+            ->checkIsLoggedIn ()->toBoolean () == TRUE): ?>
+                <?php if ($OBJ->getAuthentication ()
+                ->checkCurrentUserZoneACL (new S ('Administration'))
+                ->toBoolean () == FALSE): ?>
+                    <div class="notification attention">
+                    <div class="from">From: <strong>Authentication</strong></div>
+                    <div class="on">On: <?php echo date ('d/m/Y H:i:s',
+                    (int) (string) time ()); ?></div>
+                    <div class="msg">
+                        <a href="#"
+                        class="close-notification" data-id="#"></a>
+                        You are restricted to view this area! To have access to the administration interface, contact
+                        the project administrators to grant you such a request! If not, you're advised to run away
+                        from this page as your IP has been saved for further investigation! 
+                    </div>
+                </div>
+                <?php endif; ?>
+            <?php endif; ?>
+
+            <!-- Article Footer -->
+            <footer>
+                <?php if ($OBJ->getAuthentication ()
+                ->checkIsLoggedIn ()->toBoolean () == TRUE): ?>
+                    <?php if ($OBJ->getAuthentication ()
+                    ->checkCurrentUserZoneACL (new S ('Administration'))
+                    ->toBoolean () == TRUE): ?>
+                        <p>Generated: <?php Execution::setExeTime (new S ('Finish')); echo round (Execution::getExeTime (new S ('Start'),
+                        new S ('Finish'))->toInt (), 4); ?> ## Cron: <em><?php echo date ('d/H:i:s',
+                        (int) (string) $OBJ->getSettings ()->getConfigKey (new
+                        S ('Cron.Timer'), new B (FALSE))), '</em> vs. <em>',
+                        date ('d/H:i:s'); ?></em> # <?php if ($OBJ->getSettings ()
+                        ->getConfigKey (new S ('Cron.State')) == _T ('Run')): ?>
+                            <a href="<?php echo
+                            Architecture::getHost (); ?>/Admin/Go/Do Admin/Cron Stop">Stop</a>
+                        <?php else: ?>
+                            <?php if (time () - (int) (string) $OBJ->getSettings ()
+                            ->getConfigKey (new S ('Cron.Timer'),
+                            new B (FALSE)) > 60): ?>
+                                <a href="<?php echo
+                                Architecture::getHost (); ?>/Admin/Go/Do Admin/Cron Start">Start</a>
+                            <?php else: ?>
+                                <?php echo _T ('Stopping Cron Thread'); ?>
+                            <?php endif; ?>
+                        <?php endif; ?> ## <?php echo $OBJ->getConfigKey (new 
+                        S ('Footer')); ?> ## <span class="jQClock"></span> on 
+                        PHP v. <?php echo phpversion (); ?></p>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </footer>
+            <!-- /Article Footer -->
+
+        </article>
+        <!-- /Full Content Block -->
+
+    </section>
+    <!-- /Main Content -->

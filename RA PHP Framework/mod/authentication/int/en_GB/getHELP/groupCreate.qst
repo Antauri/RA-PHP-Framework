@@ -1,0 +1,5 @@
+Groups are usually "containers" of users. Meaning that they are made-up out of users and are applied permissions. These permissions, set
+on a specific group thus apply to all the members (users) of the group. Having groups, means that an administrator of this application
+does not need to apply permissions to each and every user, instead, he does only one operation of adding one set of permissions for
+a group. Thus, keeping users at bay is done, organized through the concept of users, groups and ACL (Access Control Lists) where users
+are mapped to groups and groups are given permissions (allowed, denied) to specific zones.

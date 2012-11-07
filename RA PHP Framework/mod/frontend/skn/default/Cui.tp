@@ -1,0 +1,11 @@
+    <article>
+        <?php _Interpret ('Tags: ', 'Taguri: '); ?>
+        <?php $Cui
+        ->renderWidget (new 
+        S ('widgetItem')); ?>
+    </article>
+    <aside>
+       <h2>Întrebări</h2>
+       <?php $Texts->renderWidget (new S ('widgetListLast'), 
+       new A (Array ('Category' => '76efd3a6-ca2c-11e0-9e92-002185113911'))); ?>
+    </aside>
