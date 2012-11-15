@@ -1,4 +1,10 @@
-raphpframework
+RA PHP Framework
 ==============
 
-RA PHP Framework, a Strong Type Hinted PHP Framework for hard needs
+RA PHP Framework, a Strong Type Hinted PHP Framework for hard needs. We're a team of PHP and (mainly) Java developers that have been working for some years now, since 2006 actually, on a PHP framework, named after the Egyptian God RA (also known as Horus, the god of Sun) which implemented the idea of Strict Data Types by going the "Java way" of doing it, wrapping any kind of data inside objects, making sure that passed parameters get checked for strictness, making sure your code respects the standards of strictness that languages like Java/C# or C++ have promoted for so many years. How we've done this? Since PHP 5 we've relied on PHP's type hinting to enforce these rules. And it worked. Flawlessly! 
+
+Most of the documentation regarding the RA PHP Framework project can be found right in the source. Thus, you'd need to checkout the core of the framework. You can use the Browse Source button above to see the structure of the code and decide what's best to checkout, or even best, to actually read the documentation, file by file. We may however publish tutorials or guidelines in the wiki, so check us out once in a while, as most new features, how-tos or more are going to be announced here.
+
+We voted to keep documentation in-line with the code, because it's a sure way that the documentation won't go stale. Although it's not yet all complete, as what's on the SVN is still a "work-in-progress" you can jump and contribute on the project with your own ideas, features, requests, bug-fixes, etc. The documentation provided with each method, in each class of the core of the framework should help you get started quickly.
+
+If by any chance you see the latest commit to be a few months old. Don't panic. The project is not dead. We have very few releases a year, maybe once per year, or even less. We have our own policy to wait for PHP to mature before we implement something new. If something's not in the source code, feel free to checkout, modify, fork and user for your own.
