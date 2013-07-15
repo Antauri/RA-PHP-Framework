@@ -1,0 +1,7 @@
+#manageCities thead th.actions {
+    display: none;
+}
+
+#manageCities tbody tr td:last-child {
+    display: none;
+}

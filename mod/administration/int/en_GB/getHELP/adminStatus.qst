@@ -1,0 +1,6 @@
+<div class="easyWidget-header">Hy there %uId</div>
+<div class="easyWidget-content">
+    Hy <strong>%uId</strong>! Welcome to the administration interface. On this status page you are going to find a lot of data 
+    regarding your project, from the latest <em>registered users</em> to latest comments or more. If you wish to have more statistics in 
+    the upper half of the screen, you can arrange this info boxes, on three columns, as you see fit! <strong>Enjoy!</strong>
+</div>

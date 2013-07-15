@@ -1,8 +1,0 @@
-Properties are key and value pairs you set for your items, in a manner that's defined by the concept of many-to-one (many properties to
-an item) which can be used in many circumstances. These properties, either previously defined or defined by you can be used to
-control specific aspects of the item you're setting these properties on. To start adding item properties:
-<ol>
-    <li>Set the key of the item property. Make sure you set it unique. Usually one property key must be unique for that item.</li>
-    <li>Enter the value of the key. This can be anything, as per provided documentation, or anything you can think of or need to
-    specify. The possibilities are endless.</li>
-</ol>

@@ -1,0 +1,5 @@
+<div class="RA_err_msg_div">
+    <?php echo $actionErrorMessage; ?>
+	<a href="<?php echo $objURLToGoBack; ?>"
+	class="RA_err_button_as_LINK">Go Back</a>
+</div>

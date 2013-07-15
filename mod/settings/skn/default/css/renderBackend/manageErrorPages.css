@@ -1,0 +1,7 @@
+#manageErrorPages thead th.actions {
+    display: none;
+}
+
+#manageErrorPages tbody tr td:last-child {
+    display: none;
+}

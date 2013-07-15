@@ -1,7 +1,0 @@
-#manageCountries thead th.actions {
-    display: none;
-}
-
-#manageCountries tbody tr td:last-child {
-    display: none;
-}

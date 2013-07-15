@@ -1,0 +1,24 @@
+<table id="manageUsers">
+    <thead>
+        <tr>
+            <th><?php echo _T ('Id'); ?></th>
+            <th><?php echo _T ('User'); ?></th>
+            <th><?php echo _T ('Email'); ?></th>
+            <th><?php echo _T ('Group'); ?></th>
+            <th><?php echo _T ('Last'); ?></th>
+            <th><?php echo _T ('First'); ?></th>
+            <th><?php echo _T ('Registered'); ?></th>
+            <th class="actions"><?php echo _T ('Actions'); ?></th>
+        </tr>
+    </thead>
+    <tfoot>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Id'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('User'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Email'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Group'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Last'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('First'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Registered'); ?>" class="inputSearch" /></th>
+    	<th><input type="text" placeholder="Search <?php echo _T ('Actions'); ?>" class="inputSearch" disabled="disabled" /></th>
+    </tfoot>
+</table>

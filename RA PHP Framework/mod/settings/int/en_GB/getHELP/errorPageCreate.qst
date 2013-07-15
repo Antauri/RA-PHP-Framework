@@ -1,4 +1,0 @@
-Error pages are there to provide friendly information to users that have arrived anywhere else than you wanted them to arrive to. For
-each error page you need to set a code (HTTP error code) as we're going to redirect each error code to that specific error page
-you're going to define. If not, a default text will be shown, but we argue that you should define your own text for your own errors
-and try to help your users as much as you can.
